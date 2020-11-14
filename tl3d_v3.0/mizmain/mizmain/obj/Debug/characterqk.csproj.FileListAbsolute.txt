@@ -1,0 +1,11 @@
+F:\slefSvn\trunk\characterqk\characterqk\bin\characterqk.dll.config
+F:\slefSvn\trunk\characterqk\characterqk\bin\characterqk.dll
+F:\slefSvn\trunk\characterqk\characterqk\bin\characterqk.pdb
+F:\slefSvn\trunk\characterqk\characterqk\obj\Debug\characterqk.csprojResolveAssemblyReference.cache
+F:\slefSvn\trunk\characterqk\characterqk\obj\Debug\characterqk.dll
+F:\slefSvn\trunk\characterqk\characterqk\obj\Debug\characterqk.pdb
+F:\slefSvn\trunk\h5ts\characterqk\characterqk\bin\characterqk.dll.config
+F:\slefSvn\trunk\h5ts\characterqk\characterqk\bin\characterqk.dll
+F:\slefSvn\trunk\h5ts\characterqk\characterqk\bin\characterqk.pdb
+F:\slefSvn\trunk\h5ts\characterqk\characterqk\obj\Debug\characterqk.dll
+F:\slefSvn\trunk\h5ts\characterqk\characterqk\obj\Debug\characterqk.pdb

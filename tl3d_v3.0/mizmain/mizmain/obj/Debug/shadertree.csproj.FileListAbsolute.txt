@@ -1,0 +1,7 @@
+D:\work\shadertree\shadertree\bin\shadertree.dll.config
+D:\work\shadertree\shadertree\bin\shadertree.dll
+D:\work\shadertree\shadertree\bin\shadertree.pdb
+D:\work\shadertree\shadertree\obj\Debug\shadertree.csproj.CoreCompileInputs.cache
+D:\work\shadertree\shadertree\obj\Debug\shadertree.dll
+D:\work\shadertree\shadertree\obj\Debug\shadertree.pdb
+D:\work\shadertree\shadertree\obj\Debug\shadertree.csprojResolveAssemblyReference.cache

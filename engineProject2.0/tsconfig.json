@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "target": "es5",
+    "outDir": "bin/js",
+    "sourceMap": false,
+    "declaration": true,
+    "noImplicitReturns":false,
+    "allowUnreachableCode":false
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}

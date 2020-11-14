@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\arpglocal\arpglocal\bin\arpglocal.dll.config
+F:\slefSvn\trunk\arpglocal\arpglocal\bin\arpglocal.dll
+F:\slefSvn\trunk\arpglocal\arpglocal\bin\arpglocal.pdb
+F:\slefSvn\trunk\arpglocal\arpglocal\obj\Debug\arpglocal.dll
+F:\slefSvn\trunk\arpglocal\arpglocal\obj\Debug\arpglocal.pdb
+F:\slefSvn\trunk\arpglocal\arpglocal\obj\Debug\arpglocal.csprojResolveAssemblyReference.cache

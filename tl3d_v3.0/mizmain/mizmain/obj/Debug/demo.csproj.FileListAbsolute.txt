@@ -1,0 +1,10 @@
+E:\codets\pan\demo\demo\bin\demo.dll.config
+E:\codets\pan\demo\demo\bin\demo.dll
+E:\codets\pan\demo\demo\bin\demo.pdb
+E:\codets\pan\demo\demo\obj\Debug\demo.dll
+E:\codets\pan\demo\demo\obj\Debug\demo.pdb
+D:\桌面\DZ-A-006\Desktop\slefSvn\trunk\demo\demo\bin\demo.dll.config
+D:\桌面\DZ-A-006\Desktop\slefSvn\trunk\demo\demo\bin\demo.dll
+D:\桌面\DZ-A-006\Desktop\slefSvn\trunk\demo\demo\bin\demo.pdb
+D:\桌面\DZ-A-006\Desktop\slefSvn\trunk\demo\demo\obj\Debug\demo.dll
+D:\桌面\DZ-A-006\Desktop\slefSvn\trunk\demo\demo\obj\Debug\demo.pdb

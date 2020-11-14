@@ -1,0 +1,7 @@
+C:\wamp\www\work\textureedit\textureedit\bin\textureedit.dll.config
+C:\wamp\www\work\textureedit\textureedit\bin\textureedit.dll
+C:\wamp\www\work\textureedit\textureedit\bin\textureedit.pdb
+C:\wamp\www\work\textureedit\textureedit\obj\Debug\textureedit.csproj.CoreCompileInputs.cache
+C:\wamp\www\work\textureedit\textureedit\obj\Debug\textureedit.dll
+C:\wamp\www\work\textureedit\textureedit\obj\Debug\textureedit.pdb
+C:\wamp\www\work\textureedit\textureedit\obj\Debug\textureedit.csprojResolveAssemblyReference.cache

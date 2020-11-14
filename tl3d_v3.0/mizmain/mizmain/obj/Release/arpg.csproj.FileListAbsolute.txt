@@ -1,0 +1,6 @@
+E:\web\arpg\arpg\bin\arpg.dll.config
+E:\web\arpg\arpg\bin\arpg.dll
+E:\web\arpg\arpg\bin\arpg.pdb
+E:\web\arpg\arpg\obj\Release\arpg.csprojResolveAssemblyReference.cache
+E:\web\arpg\arpg\obj\Release\arpg.dll
+E:\web\arpg\arpg\obj\Release\arpg.pdb

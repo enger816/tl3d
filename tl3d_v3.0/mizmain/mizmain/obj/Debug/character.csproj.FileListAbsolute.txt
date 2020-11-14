@@ -1,0 +1,5 @@
+F:\slefSvn\trunk\character\character\bin\character.dll.config
+F:\slefSvn\trunk\character\character\bin\character.dll
+F:\slefSvn\trunk\character\character\bin\character.pdb
+F:\slefSvn\trunk\character\character\obj\Debug\character.dll
+F:\slefSvn\trunk\character\character\obj\Debug\character.pdb

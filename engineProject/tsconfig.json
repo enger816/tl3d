@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "module": "amd",
+    "lib": [
+      "dom",
+      "es5",
+      "es2015.promise",
+      "es2015.iterable",
+      "scripthost"
+    ],
+    "target": "es5",
+    "experimentalDecorators": true,
+    "skipLibCheck": true,
+    "outFile": "bin/tl3d.js",
+    "declaration": true,
+    "sourceMap": false
+  },
+  "exclude": [
+    "node_modules",
+    "bin"
+  ]
+}

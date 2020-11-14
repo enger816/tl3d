@@ -1,0 +1,6 @@
+F:\slefSvn\trunk\effects\effects\bin\effects.dll.config
+F:\slefSvn\trunk\effects\effects\bin\effects.dll
+F:\slefSvn\trunk\effects\effects\bin\effects.pdb
+F:\slefSvn\trunk\effects\effects\obj\Debug\effects.dll
+F:\slefSvn\trunk\effects\effects\obj\Debug\effects.pdb
+F:\slefSvn\trunk\effects\effects\obj\Debug\effects.csprojResolveAssemblyReference.cache

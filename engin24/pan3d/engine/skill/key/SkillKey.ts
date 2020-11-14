@@ -1,0 +1,51 @@
+import {CombineParticle} from "../../particle/CombineParticle"
+import {ParticleManager} from "../../particle/ParticleManager"
+import {SkillKeyVo} from "../vo/SkillKeyVo"
+import {Scene_data} from "../../context/Scene_data"
+
+    export class SkillKey {
+        public time: number = 0;
+        public particle: CombineParticle;
+        public removeCallFun: Function;
+
+        public constructor() {
+
+        }
+
+        public addToRender(): void {
+            if (!this.particle) {
+                return;
+            }
+            this.particle.reset();
+            this.particle.sceneVisible = true
+
+            ParticleManager.getInstance().addParticle(this.particle);
+        }
+
+
+
+        public setInfo(obj: SkillKeyVo): void {
+            this.time = obj.frame * Scene_data.frameTime;
+
+            this.particle = ParticleManager.getInstance().getParticleByte(Scene_data.fileRoot + obj.url);
+
+
+        }
+
+        public reset(): void {
+            //this.time = 0;
+            this.particle.reset();
+            ParticleManager.getInstance().removeParticle(this.particle);
+        }
+
+        public destory(): void {
+            if(this.particle){
+                this.particle.destory();
+                this.particle = null;
+            }
+            this.removeCallFun = null;
+        }
+
+    }
+
+

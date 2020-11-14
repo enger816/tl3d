@@ -1,0 +1,3 @@
+E:
+cd jsbag
+grunt

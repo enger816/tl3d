@@ -1,0 +1,6 @@
+C:\wamp\www\work\embedpan3d\embedpan3d\bin\embedpan3d.dll.config
+C:\wamp\www\work\embedpan3d\embedpan3d\bin\embedpan3d.dll
+C:\wamp\www\work\embedpan3d\embedpan3d\bin\embedpan3d.pdb
+C:\wamp\www\work\embedpan3d\embedpan3d\obj\Debug\embedpan3d.csproj.CoreCompileInputs.cache
+C:\wamp\www\work\embedpan3d\embedpan3d\obj\Debug\embedpan3d.dll
+C:\wamp\www\work\embedpan3d\embedpan3d\obj\Debug\embedpan3d.pdb

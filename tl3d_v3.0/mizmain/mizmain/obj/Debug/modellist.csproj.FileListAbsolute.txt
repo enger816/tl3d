@@ -1,0 +1,10 @@
+D:\桌面\DZ-A-006\Desktop\新建文件夹 (2)\modellist\modellist\bin\modellist.dll.config
+D:\桌面\DZ-A-006\Desktop\新建文件夹 (2)\modellist\modellist\bin\modellist.dll
+D:\桌面\DZ-A-006\Desktop\新建文件夹 (2)\modellist\modellist\bin\modellist.pdb
+D:\桌面\DZ-A-006\Desktop\新建文件夹 (2)\modellist\modellist\obj\Debug\modellist.dll
+D:\桌面\DZ-A-006\Desktop\新建文件夹 (2)\modellist\modellist\obj\Debug\modellist.pdb
+F:\slefSvn\trunk\modellist\modellist\bin\modellist.dll.config
+F:\slefSvn\trunk\modellist\modellist\bin\modellist.dll
+F:\slefSvn\trunk\modellist\modellist\bin\modellist.pdb
+F:\slefSvn\trunk\modellist\modellist\obj\Debug\modellist.dll
+F:\slefSvn\trunk\modellist\modellist\obj\Debug\modellist.pdb

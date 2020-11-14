@@ -1,0 +1,6 @@
+E:\codets\game\h5base\h5base\bin\h5base.dll.config
+E:\codets\game\h5base\h5base\bin\h5base.dll
+E:\codets\game\h5base\h5base\bin\h5base.pdb
+E:\codets\game\h5base\h5base\obj\Debug\h5base.dll
+E:\codets\game\h5base\h5base\obj\Debug\h5base.pdb
+E:\codets\game\h5base\h5base\obj\Debug\h5base.csprojResolveAssemblyReference.cache
