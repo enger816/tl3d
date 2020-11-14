@@ -1,0 +1,82 @@
+D .
+R 190CCE05 loadingBg.jpg
+D common
+R 2D7FD580 bg1.png
+D comp
+P 316AD948 btn_close.png
+P 5B258D17 button.png
+P 3C493DD4 check_circle.png
+P 98E54F0D checkbox.png
+P 6B7AB858 clip_num.png
+P 63A22FAC clip_tree_arrow.png
+P D749C312 clip_tree_folder.png
+P 704C5D70 combobox.png
+P D566AE8B fontClip.png
+P 38AB8F3F fontClip_num.png
+P 6EF336AE hscroll$bar.png
+P 7FF47AC5 hscroll$down.png
+P 3D7B147A hscroll$up.png
+P 750BD445 hscroll.png
+P 9A5EF899 hslider$bar.png
+P 9CED7132 hslider.png
+P BA2A0579 html.png
+P 4ACB7AEF img_bg.png
+P FCD04607 img_bg2.png
+P 23FB4D29 img_bg3.png
+P 5FD17798 img_bg4.png
+P 2BE22124 img_bg5.png
+P BA28BD65 img_blank.png
+P BA2A0579 label.png
+P B017E53E progress$bar.png
+P C05839CD progress.png
+P 3C493DD4 radio.png
+P 3C493DD4 radiogroup.png
+P 5BA25C15 tab.png
+P A3D7A036 textarea.png
+P A3D7A036 textinput.png
+P 2DCE1DF9 vscroll$bar.png
+P 6FE7EA34 vscroll$down.png
+P 0587871F vscroll$up.png
+P 5FD17798 vscroll.png
+P DDDDFB9E vslider$bar.png
+P 01BAE7F5 vslider.png
+D createRole
+P 4E14A630 1_0.png
+P CD5AEF17 1_1.png
+R F4D710AF 2_0.png
+R 5A9409B1 2_1.png
+P B3DA9A0E 3_0.png
+P B19399BF 3_1.png
+R FCBD0F92 bg.jpg
+R D363C13E nameBg.png
+R 08F6098F startBtn.png
+D item
+D npctask
+P F0758D35 5000.png
+P 6F3DE130 5000n.png
+D common/tab
+P 1DD64211 cailiao.png
+P 3667298A chenghaomokuai.png
+P C792049A daoju.png
+P 87083661 shenfumokuai.png
+P D4CBC2C6 shizhuangmokuai.png
+P FBE2DAF4 wushuangmokuai.png
+P BBC3C580 xuanzhongkuang.png
+P 5AE06476 zhuangbeimokuai.png
+D item/icon
+P E13E9409 II3312009.png
+D item/quality
+P 30DAD83A q1.png
+P 2E91018D q2.png
+P AA50F585 q3.png
+P 3B354C14 q4.png
+P D2CD84B5 q5.png
+P 3A64584B q6.png
+P 87571135 q7.png
+P 4EF6B588 qb1.png
+P DBD8D719 qb2.png
+P 73A66E56 qb3.png
+P C309DFC4 qb4.png
+P 009521C9 qb5.png
+P E7435F91 qb6.png
+P 16066B10 qb7.png

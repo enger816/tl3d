@@ -1,0 +1,21 @@
+[
+    {"guiKey":99,"name":"创角","url":"CreateRole","cls":"createRole","layerKey":2,"layout":2,"imgset":"CreateRole_atlas0.png","fullPanle":0},
+	
+	
+    {"guiKey":100,"name":"角色","url":"MainTopBar","cls":"MainTopBarView","layerKey":2,"layout":14,"imgset":"MainTopBar_atlas0.png","fullPanle":0},
+    {"guiKey":101,"name":"菜单","url":"MainBottomBar","cls":"MainBottomBar","layerKey":2,"layout":6,"imgset":"MainBottomBar_atlas0.png","fullPanle":0},
+	{"guiKey":103,"name":"怪物杀死主角死亡面板","url":"DeathView","cls":"MonsterKillMainView","layerKey":2,"layout":2,"imgset":"DeathView_atlas0.png","fullPanle":0},
+	{"guiKey":104,"name":"玩家杀死主角死亡面板","url":"DeathView","cls":"PlayerKillMainView","layerKey":2,"layout":2,"imgset":"DeathView_atlas0.png","fullPanle":0},
+	
+	
+    {"guiKey":501,"name":"主界面任务","url":"MainTask","cls":"mainTaskView","layerKey":2,"layout":6,"imgset":"MainTask_atlas0.png","fullPanle":0},
+    {"guiKey":502,"name":"NPC对话面板","url":"NpcDialog","cls":"npcDialog","layerKey":2,"layout":2,"imgset":"NpcDialog_atlas0.png","fullPanle":0},
+    {"guiKey":503,"name":"新功能开启预告面板","url":"SysOpen","cls":"sysOpenWait","layerKey":2,"layout":2,"imgset":"SysOpen_atlas0.png","fullPanle":0},
+    {"guiKey":504,"name":"新功能开启面板","url":"SysOpen","cls":"sysOpen","layerKey":2,"layout":2,"imgset":"SysOpen_atlas0.png","fullPanle":0},
+    {"guiKey":505,"name":"背包","url":"Bag","cls":"Bag","layerKey":2,"layout":2,"imgset":"Bag_atlas0.png"},
+	
+    {"guiKey":599,"name":"顶底公用","url":"PanelBorder","cls":"panelBorder","layerKey":5,"layout":2,"imgset":"PanelBorder_atlas0.png","fullPanle":0},
+	
+	
+	{"guiKey":601,"name":"主角面板","url":"Role","cls":"RoleView","layerKey":2,"layout":2,"imgset":"Role_atlas0.png"}
+]

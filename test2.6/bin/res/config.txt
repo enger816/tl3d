@@ -1,0 +1,5 @@
+﻿{
+  "type":"panjiazhi",
+  "tburl":"C:\\Program Files (x86)\\BoneAnimApp\\tb.json",
+  "role":["tb_role#avatar,name,id"]
+}

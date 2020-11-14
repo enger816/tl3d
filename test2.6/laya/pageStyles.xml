@@ -1,0 +1,4 @@
+<page>
+   <item name="Camera.scene" props="" ifExport="加载模式" aName=""/>
+   <item name="Hud.scene" props="" ifExport="加载模式" aName=""/>
+</page>
