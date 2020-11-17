@@ -1,8 +1,10 @@
 import { CameraView } from "./camera/CameraView";
+import { VertexElementFormat } from "./engine/l3d/VertexElementFormat";
+import { LayaScene2dInit } from "./engine/pansrc/layapan/overridebase/LayaScene2dInit";
+import { mainpan3d } from "./engine/tl3dinit/mainpan3d";
 import GameConfig from "./GameConfig";
 import { GameView2d } from "./scene/GameView2d";
 import { GameView3d } from "./scene/GameView3d";
-import { GameMapLayer } from "./scene/layers/GameMapLayer";
 import { SystemMgr } from "./scene/SystemMgr";
 import { TApp } from "./TApp";
 import { ui } from "./ui/layaMaxUI";
@@ -13,7 +15,7 @@ class Main {
 		let cv = Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
 		Laya["Physics"] && Laya["Physics"].enable();
 		Laya["DebugPanel"] && Laya["DebugPanel"].enable();
-		tl3d.mainpan3d.canvas = cv;
+		mainpan3d.canvas = cv;
 		Laya.stage.scaleMode = GameConfig.scaleMode;
 		Laya.stage.screenMode = GameConfig.screenMode;
 		Laya.stage.alignV = GameConfig.alignV;
@@ -49,8 +51,8 @@ class Main {
 	public onConfigLoaded(): void {
 		//加载IDE指定的场景
 		// GameConfig.startScene && Laya.Scene.open(GameConfig.startScene);
-		tl3d.VertexElementFormat.__init__();
-		tl3d.LayaScene2dInit.initData();
+		VertexElementFormat.__init__();
+		LayaScene2dInit.initData();
 		// TApp.gameView = new GameView2d();
 		TApp.gameView = new GameView3d();
 		//相机组件

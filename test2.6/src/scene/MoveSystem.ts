@@ -1,9 +1,10 @@
+import { MathUtil } from "../engine/tl3d/engine/math/MathUtil";
+import { ModelSceneChar } from "../engine/tl3dinit/scenedis/ModelSceneChar";
 import { TApp } from "../TApp";
 import { MapConst } from "./configs/MapConst";
 import { EnumMotion } from "./EnumMotion";
 import { MoveComponent } from "./MoveComponent";
 import { SystemMgr } from "./SystemMgr";
-import MathUtil = tl3d.MathUtil;
 import Point = Laya.Point;
 
 export class MoveSystem {
@@ -18,7 +19,7 @@ export class MoveSystem {
      * @param rect 视野范围
      * 
      */
-    public run(entity: tl3d.ModelSceneChar, tickTime: number, rect: Laya.Rectangle): void {
+    public run(entity: ModelSceneChar, tickTime: number, rect: Laya.Rectangle): void {
         //移动精灵并返回是否穿过一个格子
         if (!this.entityMove(entity, tickTime))
             return;
@@ -35,7 +36,7 @@ export class MoveSystem {
     /**
      * 检查其它玩家的地图块是否改变，用于检查移除
      */
-    public checkOtherCurrTile(entity: tl3d.ModelSceneChar, rect: Laya.Rectangle): void {
+    public checkOtherCurrTile(entity: ModelSceneChar, rect: Laya.Rectangle): void {
         if (!entity)
             return;
 
@@ -59,7 +60,7 @@ export class MoveSystem {
      *  功能:精灵移动
      *  参数:any  返回值:表示是否穿过一个格子
      **/
-    public entityMove(entity: tl3d.ModelSceneChar, duration: number): boolean {
+    public entityMove(entity: ModelSceneChar, duration: number): boolean {
         var moveCom: MoveComponent =  SystemMgr.singleton.moveComp;
         var nextPoint: SpritePoint = moveCom.movePathArr[0];
         if (!nextPoint)//没有下一个格子

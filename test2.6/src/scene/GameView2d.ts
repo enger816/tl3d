@@ -1,9 +1,9 @@
 import { GameMapLayer } from "./layers/GameMapLayer";
 import { MapConst } from "./configs/MapConst";
-
-import LayaOverride2dSceneManager = tl3d.LayaOverride2dSceneManager;
 import { TApp } from "../TApp";
 import { Base2dScene } from "./layers/Base2dScene";
+import { LayaOverride2dSceneManager } from "../engine/pansrc/layapan/overridebase/LayaOverride2dSceneManager";
+import { ModelSceneChar } from "../engine/tl3dinit/scenedis/ModelSceneChar";
 export class GameView2d  implements IGameView{
     private static TEMP_POINT: Laya.Point = new Laya.Point;
     private static TEMP_RECT: Laya.Rectangle = new Laya.Rectangle;
@@ -114,8 +114,8 @@ export class GameView2d  implements IGameView{
     }
 
     // // //创建角色
-    private createChar(url: string, px: number, py: number): tl3d.ModelSceneChar {
-        var mchar: tl3d.ModelSceneChar = new tl3d.ModelSceneChar();
+    private createChar(url: string, px: number, py: number): ModelSceneChar {
+        var mchar: ModelSceneChar = new ModelSceneChar();
         mchar.setRoleUrl(url);
         mchar.x = px;
         mchar.z = py;
@@ -241,14 +241,14 @@ export class GameView2d  implements IGameView{
     /**
      * 添加精灵
      */
-    public addMovieDisplay(char: tl3d.ModelSceneChar) {
+    public addMovieDisplay(char: ModelSceneChar) {
         this.scene.tscene.addMovieDisplay(char);
     }
 
     /**
      * 删除精灵
      */
-    public removeMovieDisplay(char: tl3d.ModelSceneChar) {
+    public removeMovieDisplay(char: ModelSceneChar) {
         this.scene.tscene.removeMovieDisplay(char);//addMovieDisplay(char);
     }
 }

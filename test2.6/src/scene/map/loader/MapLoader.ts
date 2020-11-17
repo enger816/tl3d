@@ -1,9 +1,5 @@
-
-import DGApp from "../../../../../com/dg/applictions/DGApp";
 import { MapEditorConfig } from "../../configs/MapEditorConfig";
 import { MapConst } from "../../configs/MapConst";
-import { MapModel } from "../../../model/MapModel";
-import { DGContext } from "../../../../../com/dg/core/mvc/DGContext";
 
 
 export class MapLoader{
@@ -18,17 +14,17 @@ export class MapLoader{
        
             console.assert(cellBytesAB != null,mapResConfigUrl,`加载失败`);
 
-            let inflate:Zlib.RawInflate = new Zlib.RawInflate(cellBytesAB);
-            var plain:Uint8Array = inflate.decompress();
+            // let inflate:Zlib.RawInflate = new Zlib.RawInflate(cellBytesAB);
+            // var plain:Uint8Array = inflate.decompress();
 
-            let cellBytes:Laya.Byte = new Laya.Byte(plain);
+            let cellBytes:Laya.Byte = new Laya.Byte();
             let endian:string = cellBytes.endian;
             cellBytes.pos = 0;
             let version:number = cellBytes.readInt32();
             console.log('test');
 
-            var mapModel:MapModel = DGContext.getInstance(MapModel);
-            var mapConfig:MapEditorConfig = mapModel.editorCfg = new MapEditorConfig();
+            // var mapModel:MapModel = DGContext.getInstance(MapModel);
+            var mapConfig:MapEditorConfig = new MapEditorConfig();//mapModel.editorCfg = 
             mapConfig.width = cellBytes.readInt32();
             mapConfig.height = cellBytes.readInt32();
             mapConfig.columns = cellBytes.readInt32();
@@ -143,8 +139,8 @@ export class MapLoader{
                     var eventXml:any = Laya.loader.getRes(triggerPath);
                     if(eventXml)
                     {
-                        var mapModel:MapModel = DGContext.getInstance(MapModel);
-                        mapModel.mapStaticObject = eventXml;
+                        // var mapModel:MapModel = DGContext.getInstance(MapModel);
+                        // mapModel.mapStaticObject = eventXml;
                     }
 
                     hander.runWith(map);

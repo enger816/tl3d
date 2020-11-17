@@ -1,0 +1,9 @@
+1.install node
+npm
+node
+npm i layaair2-cmd -g
+
+//build project
+layaair2-cmd compile
+//publis web
+layaair2-cmd publish -c web

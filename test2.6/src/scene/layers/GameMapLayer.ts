@@ -1,6 +1,8 @@
 import { RpgTile } from "./RpgTile";
 import { MapConst } from "../configs/MapConst";
 import { TApp } from "../../TApp";
+import { BaseEvent } from "../../engine/tl3d/engine/events/BaseEvent";
+import { CombineParticle } from "../../engine/tl3d/engine/particle/CombineParticle";
 
 /**
  * 地图层
@@ -74,17 +76,17 @@ export class GameMapLayer extends Laya.Sprite {
         var scene3d = TApp.gameView.scene.tscene;
         // SystemMgr.singleton.findPathSystem.currMapFindPathFixPos(null,pos);
         //处理光标
-        var effect: tl3d.CombineParticle = scene3d.particleManager.getParticleByte("content/particleresources/ef_all/buff/cursor_effect_byte.txt");
+        var effect: CombineParticle = scene3d.particleManager.getParticleByte("content/particleresources/ef_all/buff/cursor_effect_byte.txt");
         scene3d.particleManager.addParticle(effect);
         effect.x = this.mouseX;
         effect.z = this.mouseY;
         /*    effectCom.effect.x = this.mapLayer.mouseX;
                effectCom.effect.z = -this.mapLayer.mouseY * Scene_data.SCALE_Z; */
-        effect.addEventListener(tl3d.BaseEvent.COMPLETE, this.onPlayCom, this);
+        effect.addEventListener(BaseEvent.COMPLETE, this.onPlayCom, this);
     }
 
-    private onPlayCom(value: tl3d.BaseEvent): void {
-        TApp.gameView.scene.tscene.particleManager.removeParticle(<tl3d.CombineParticle>(value.target))
+    private onPlayCom(value: BaseEvent): void {
+        TApp.gameView.scene.tscene.particleManager.removeParticle(<CombineParticle>(value.target))
     }
 
 

@@ -1,4 +1,4 @@
-import LayaOverride2dSceneManager = tl3d.LayaOverride2dSceneManager;
+import { ModelSceneChar } from "../engine/tl3dinit/scenedis/ModelSceneChar";
 import { TApp } from "../TApp";
 import { Base3dScene } from "./layers/Base3dScene";
 export class GameView3d implements IGameView {
@@ -80,8 +80,8 @@ export class GameView3d implements IGameView {
     }
 
     // // //创建角色
-    private createChar(url: string, px: number, py: number): tl3d.ModelSceneChar {
-        var mchar: tl3d.ModelSceneChar = new tl3d.ModelSceneChar();
+    private createChar(url: string, px: number, py: number): ModelSceneChar {
+        var mchar: ModelSceneChar = new ModelSceneChar();
         mchar.setRoleUrl(url);
         mchar.x = px;
         mchar.z = py;
@@ -116,14 +116,14 @@ export class GameView3d implements IGameView {
     /**
      * 添加精灵
      */
-    public addMovieDisplay(char: tl3d.ModelSceneChar) {
+    public addMovieDisplay(char: ModelSceneChar) {
         this.scene.tscene.addMovieDisplay(char);
     }
 
     /**
      * 删除精灵
      */
-    public removeMovieDisplay(char: tl3d.ModelSceneChar) {
+    public removeMovieDisplay(char: ModelSceneChar) {
         this.scene.tscene.removeMovieDisplay(char);//addMovieDisplay(char);
     }
 }

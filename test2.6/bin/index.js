@@ -11,6 +11,6 @@ window.screenOrientation = "sensor_landscape";
 loadLib("libs/laya.core.js");
 loadLib("libs/laya.ui.js");
 loadLib("libs/inflate.min.js");
-loadLib("libs/tl3d.js");
+// loadLib("libs/tl3d.js");
 //-----libs-end-------
 loadLib("js/bundle.js");
