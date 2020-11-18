@@ -10,12 +10,15 @@
     "gulp": "^4.0.2",
     "gulp-asset-manifest": "^0.0.6",
     "gulp-clean": "^0.4.0",
+    "gulp-image": "^6.2.1",
     "gulp-rev": "^9.0.0",
     "rollup": "^2.33.2",
     "rollup-plugin-typescript2": "^0.29.0",
     "typescript": "^4.0.5"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "del": "^6.0.0"
+  },
   "scripts": {
     "test": "test"
   },
@@ -23,5 +26,6 @@
     "testtl3d"
   ],
   "author": "enger",
-  "license": "MIT"
+  "license": "MIT",
+  "private": true
 }

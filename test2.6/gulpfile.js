@@ -1,32 +1,22 @@
 var gulp = require('gulp');
+// var clean = require('gulp-clean');
+// var image = require("gulp-image");
+// var assetManifest = require('gulp-asset-manifest');
+// var rev = require('gulp-rev'); 
+//build typescript
 var rollup = require('rollup');
-var clean = require('gulp-clean');
 var rollupTypescript = require('rollup-plugin-typescript2');
-//
-var assetManifest = require('gulp-asset-manifest');
-var rev = require('gulp-rev'); 
 
-//清理文件
+//1.clean release
 gulp.task('clean', function () {
-    return gulp
-        .src('dist', {
-            read: false,
-            allowEmpty: true
-        })
-        .pipe(clean('dist/**/*.*'));
-        // .pipe(clean('bin'));
+    //  /*   递归所有
+    //  /**  当前目录所有
+    //  /*.* 所有文件
+    return gulp.src(['release/*','!release/version.json'], {read: false,force:true})
+        .pipe(clean());
 });
 
-//清理js
-gulp.task('clean-js', function () {
-    return gulp
-        .src('dist/**/*.js', {
-            read: false
-        })
-        .pipe(clean('*.js'));
-});
-
-//编译tl3d
+//2.compiler project
 gulp.task("build", async function () {
     var subTask = await rollup.rollup({
         input: "src/Main.ts",
@@ -40,7 +30,6 @@ gulp.task("build", async function () {
             rollupTypescript()
         ]
     });
-
     await subTask.write({
         file: 'bin/js/bundle.js',
         format: 'iife', //iife
@@ -49,18 +38,46 @@ gulp.task("build", async function () {
     });
 });
 
+//3.copy bin to release
+gulp.task("copyFile", function () {
+    var baseCopyFilter = [`./bin/**/*.*`, `!./bin/version.json`, `!./bin/common/*.*`];
+    var stream = gulp.src(baseCopyFilter, {
+        base: `./bin`
+    });
+    return stream.pipe(gulp.dest('release/'));
+});
+
+//4.compress image
+gulp.task('compressimage', function () {
+      return  gulp.src('./release/**/*.*')
+          .pipe(image({
+            pngquant: true,
+            optipng: false,
+            zopflipng: false,
+            jpegRecompress: false,
+            mozjpeg: false,  //jpg
+            gifsicle: false,  //gif
+            svgo: true,
+            concurrent: 10, //并发数
+            quiet: true // defaults to false
+          }))
+          .pipe(gulp.dest('./release'));
+      });
+
+//5.gen version.json
 gulp.task('genmanifest', function () {
-   return gulp.src('bin/**/*.*')
+   return gulp.src('release/**/*.*')
         // .pipe(sass())
         .pipe(rev()) // Optional
-        .pipe(assetManifest({log:false,includeRelativePath:true,manifestFile:"manifest.json"}))
-        .pipe(gulp.dest('dist'));
+        .pipe(assetManifest({log:false,includeRelativePath:true,manifestFile:"release/version.json"}))
+        // .pipe(gulp.dest('dist')); output manifest files
 });
 
 //gulp入口
 gulp.task('default', gulp.series(
     // gulp.parallel('clean'),
-    // gulp.parallel('clean-js'),
     gulp.parallel('build')
+    // gulp.parallel('copyFile'),
+    // gulp.parallel('compressimage'),
     // gulp.parallel('genmanifest')
 ));
