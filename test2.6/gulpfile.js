@@ -2,6 +2,9 @@ var gulp = require('gulp');
 var rollup = require('rollup');
 var clean = require('gulp-clean');
 var rollupTypescript = require('rollup-plugin-typescript2');
+//
+var assetManifest = require('gulp-asset-manifest');
+var rev = require('gulp-rev'); 
 
 //清理文件
 gulp.task('clean', function () {
@@ -10,8 +13,8 @@ gulp.task('clean', function () {
             read: false,
             allowEmpty: true
         })
-        .pipe(clean('dist'))
-        .pipe(clean('bin'));
+        .pipe(clean('dist/**/*.*'));
+        // .pipe(clean('bin'));
 });
 
 //清理js
@@ -46,10 +49,18 @@ gulp.task("build", async function () {
     });
 });
 
+gulp.task('genmanifest', function () {
+   return gulp.src('bin/**/*.*')
+        // .pipe(sass())
+        .pipe(rev()) // Optional
+        .pipe(assetManifest({log:false,includeRelativePath:true,manifestFile:"manifest.json"}))
+        .pipe(gulp.dest('dist'));
+});
 
 //gulp入口
 gulp.task('default', gulp.series(
     // gulp.parallel('clean'),
-    // gulp.parallel('clean-js')
+    // gulp.parallel('clean-js'),
     gulp.parallel('build')
+    // gulp.parallel('genmanifest')
 ));
