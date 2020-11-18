@@ -1,9 +1,0 @@
-CACHE MANIFEST
-#v1.0.0
-CACHE:
-res/map/slg_city.txt
-res/map/slg_map.txt
-NETWORK:
-*
-FALLBACK:
-index.html

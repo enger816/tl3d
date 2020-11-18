@@ -1,3 +1,0 @@
-E:
-cd jsbag
-grunt

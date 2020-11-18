@@ -1,0 +1,27 @@
+{
+  "name": "testtl3d",
+  "version": "1.0.0",
+  "description": "testtl3d",
+  "main": "gulp-autocompile.js",
+  "bin": {
+    "testtl3d": "index.js"
+  },
+  "dependencies": {
+    "gulp": "^4.0.2",
+    "gulp-asset-manifest": "^0.0.6",
+    "gulp-clean": "^0.4.0",
+    "gulp-rev": "^9.0.0",
+    "rollup": "^2.33.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "typescript": "^4.0.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "keywords": [
+    "testtl3d"
+  ],
+  "author": "enger",
+  "license": "MIT"
+}
