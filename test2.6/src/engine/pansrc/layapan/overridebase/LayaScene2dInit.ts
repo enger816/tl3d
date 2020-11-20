@@ -1,5 +1,4 @@
-﻿import { mainpan3d } from "../../../tl3dinit/mainpan3d";
-import { Engine } from "../../../tl3d/engine/Engine";
+﻿import { Engine } from "../../../tl3d/engine/Engine";
 import { SceneManager } from "../../../tl3d/engine/scene/SceneManager";
 import { LayaOverride2dSceneManager } from "./LayaOverride2dSceneManager";
 import { LayaOverride2dEngine } from "./LayaOverride2dEngine";
@@ -14,8 +13,8 @@ export class LayaScene2dInit {
             //替换Engine引擎对象；
             LayaOverride2dEngine.initConfig();
 
-            Engine.init(mainpan3d.canvas) //初始化场景
-            Engine.resetSize(mainpan3d.canvas.width, mainpan3d.canvas.height); //设置canvas大小
+            Engine.init() //初始化场景
+            Engine.resetSize(); //设置canvas大小
         //    Engine.initPbr();
             LayaScene2dInit.isConfig = true;   //完成
             SceneManager.getInstance().ready = true; //场景update可以

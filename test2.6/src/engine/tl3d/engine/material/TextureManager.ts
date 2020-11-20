@@ -8,6 +8,7 @@ export class TextureManager extends ResGC {
     //private _dic: Object;
     private _loadDic: Object;
     private _resDic: Object;
+    private _init:boolean=false;
 
     public defaultLightMap: WebGLTexture;
 
@@ -34,10 +35,6 @@ export class TextureManager extends ResGC {
     }
 
     public getTexture($url: string, $fun: Function, $wrapType: number = 0, $info: any = null, $filteType: number = 0, $mipmapType: number = 0): void {
-        // if ($url.indexOf("zc_deng_00.png") != -1) {
-        //    //console.log("22222");
-        // }
-
         if (this._dic[$url]) {
             if ($info) {
                 $fun(this._dic[$url], $info);
@@ -145,15 +142,18 @@ export class TextureManager extends ResGC {
     }
 
     public initDefaultLightMapTexture(): void {
-        var canvas: any = document.createElement("canvas");
-        var ctx: CanvasRenderingContext2D = canvas.getContext("2d");
-        canvas.width = 32;
-        canvas.height = 32;
-        ctx.fillStyle = "rgb(" + 255 / 5 + "," + 255 / 5 + "," + 255 / 5 + ")";
-        ctx.fillRect(0, 0, 32, 32);
-
-        this.defaultLightMap = Scene_data.context3D.getTexture(canvas);
-
+        // var canvas: any = document.createElement("canvas");
+        // var ctx: CanvasRenderingContext2D = canvas.getContext("2d");
+        // canvas.width = 32;
+        // canvas.height = 32;
+        // ctx.fillStyle = "rgb(" + 255 / 5 + "," + 255 / 5 + "," + 255 / 5 + ")";
+        // ctx.fillRect(0, 0, 32, 32);
+        // this.defaultLightMap = Scene_data.context3D.getTexture(canvas);
+        //todo
+        this.getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture: TextureRes) => {
+            this.defaultLightMap = $texture.texture;
+        });
+        // this.defaultLightMap=Scene_data.tex32;
     }
 
     public gc(): void {

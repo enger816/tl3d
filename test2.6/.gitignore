@@ -1,3 +1,6 @@
 .rpt2_cache
 node_modules
 .laya/chrome
+release/native/android_studio/app/src/main/assets/cache
+release/native/wkwebview/resource/cache
+release/native/android_studio/gradle/wrapper/dists

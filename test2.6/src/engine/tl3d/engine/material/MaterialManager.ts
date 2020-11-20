@@ -215,7 +215,7 @@ import { ResGC } from "../base/ResGC";
 
             for (var i: number = 0; i < dynamicTexList.length; i++) {
                 if (dynamicTexList[i].isParticleColor) {
-                    dynamicTexList[i].creatTextureByCurve();
+                    // dynamicTexList[i].creatTextureByCurve();
                 } else {
                     TextureManager.getInstance().getTexture(Scene_data.fileRoot + dynamicTexList[i].url, ($textureVo: TextureRes, $texItem: DynamicTexItem) => {
                         $texItem.textureRes = $textureVo;

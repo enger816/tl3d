@@ -78,267 +78,6 @@
     VertexElementFormat.HalfVector2 = "halfvector2";
     VertexElementFormat.HalfVector4 = "halfvector4";
 
-    class mainpan3d {
-    }
-
-    class Engine {
-        static init($caves) {
-            /*      var isIpad = /ipad/i.test(navigator.userAgent);
-                 var isIphone = /iPhone/i.test(navigator.userAgent);
-                 var isAndroid = /android/i.test(navigator.userAgent);
-                 var isWindow = /iindow/i.test(navigator.userAgent);
-         
-                 var sUserAgent = navigator.userAgent.toLowerCase();
-                 ////console.log("--sUserAgent--",sUserAgent,isIpad,isIphone,isAndroid,isWindow);
-                 if (isIpad || isIphone || isAndroid) {
-                     Scene_data.isPc = false;
-                 } else {
-                     Scene_data.isPc = true;
-                 }
-         
-                 if (isIpad || isIphone) {
-                     Scene_data.isIos = true;
-                 } else {
-                     Scene_data.isIos = false;
-                 }
-         
-                 Scene_data.vpMatrix = new Matrix3D;
-                 Scene_data.canvas3D = $caves;
-                 Scene_data.context3D = new Context3D();
-                 Scene_data.context3D.init($caves);
-         
-                 Scene_data.cam3D = new Camera3D;
-                 Scene_data.focus3D = new Object3D;
-                 Scene_data.focus3D.x = 0;
-                 Scene_data.focus3D.y = 0;
-                 Scene_data.focus3D.z = 0;
-               //  Scene_data.focus3D.rotationY = 135;
-               //  Scene_data.focus3D.rotationX = -45;
-         
-                 Scene_data.light = new LightVo();
-         
-                 Engine.testBlob();
-         
-                 Engine.resetSize();
-         
-                 Engine.initShadow();
-         
-                 TimeUtil.init();
-         
-                 PathManager.init(); */
-        }
-        static resetSize(a = 0, b = 0) {
-            /*        if (Engine.needInputTxt) {
-                       return;
-                   }
-                   //Scene_data.stageWidth = document.documentElement.clientWidth;
-                   //Scene_data.stageHeight = document.documentElement.clientHeight;
-                   //var flag: boolean = false;
-           
-                   if (document.body.clientWidth > document.body.clientHeight) {
-                       Scene_data.stageWidth = document.body.clientWidth;
-                       Scene_data.stageHeight = document.body.clientHeight;
-                       Scene_data.verticalScene = false;
-                   } else {
-                       Scene_data.stageWidth = document.body.clientHeight;
-                       Scene_data.stageHeight = document.body.clientWidth;
-                       Scene_data.verticalScene = true;
-                   }
-           
-                   // Scene_data.stageWidth = document.body.clientWidth;
-                   // Scene_data.stageHeight = document.body.clientHeight;
-                   // Scene_data.verticalScene = false;
-           
-                   if (!this.needVertical) {
-                       Scene_data.stageWidth = document.body.clientWidth;
-                       Scene_data.stageHeight = document.body.clientHeight;
-                       Scene_data.verticalScene = false;
-                   }
-           
-                   Scene_data.canvas3D.width = Scene_data.stageWidth;
-                   Scene_data.canvas3D.height = Scene_data.stageHeight;
-           
-           
-                   Scene_data.context3D.resetSize(Scene_data.stageWidth, Scene_data.stageHeight);
-           
-           
-                   this.resetViewMatrx3D()
-           
-                   Scene_data.canvas3D.style.position = "absolute";
-                   Scene_data.canvas3D.style.left = "0px";
-                   Scene_data.canvas3D.style.top = "0px";
-           
-                   if (Scene_data.verticalScene) {
-                       Scene_data.canvas3D.style.transform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
-                       //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
-                   } else {
-           
-                       Scene_data.canvas3D.style.transform = "matrix(1,0,0,1,0,0)";
-                       //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
-                   }
-           
-                   Scene_data.canvas3D.style.transformOrigin = "0px 0px 0px";
-           
-                   Scene_data.canvas3D.style.top = "0px"; */
-        }
-        static resetViewMatrx3D() {
-            /*         if (Scene_data.viewMatrx3D) {
-                        Scene_data.viewMatrx3D.identity()
-                    } else {
-                        Scene_data.viewMatrx3D = new Matrix3D;
-                    }
-                    var fovw: number = Scene_data.stageWidth
-                    var fovh: number = Scene_data.stageHeight
-                    Scene_data.sceneViewHW = Math.max(fovw, fovh)
-            
-                    Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(this.sceneCamScale, 1, 50, Scene_data.camFar);
-                    Scene_data.viewMatrx3D.appendScale(1 * (Scene_data.sceneViewHW / fovw * 2), fovw / fovh * (Scene_data.sceneViewHW / fovw * 2), 1);
-            
-             */
-        }
-        /* public static update(): void {
-              TimeUtil.update();
-             FpsMc.update();
-         }*/
-        static unload() {
-            //NetManager.getInstance().close();
-        }
-    }
-    /*  public static resReady(): void {
-         Engine.initPbr();
-     }
-
-     public static testBlob(): void {
-
-         //Scene_data.supportBlob = false;
-         //return;
-
-         try {
-             var blob = new Blob();
-         } catch (e) {
-             Scene_data.supportBlob = false;
-             return;
-         }
-         Scene_data.supportBlob = true;
-     }
-
-     public static initPbr(): void {
-         if (!Scene_data.pubLut) {
-             TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/brdf_ltu.jpg", ($texture: TextureRes) => {
-                 Scene_data.pubLut = $texture.texture;
-             }, 1);
-         }
-
-         if (!Scene_data.skyCubeMap) {
-             TextureManager.getInstance().loadCubeTexture(Scene_data.fileRoot + "base/cube/e", ($ary: any) => {
-                 Scene_data.skyCubeMap = $ary;
-             })
-         }
-
-
-     }
-
-     public static initShadow(): void {
-         TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture: TextureRes) => {
-             Display3dShadow.texture = $texture.texture;
-         });
-     } */
-    Engine.needVertical = true;
-    Engine.needInputTxt = false; //在输入文本时，将不再可调整大小
-    Engine.sceneCamScale = 1.76;
-
-    class Vector3D {
-        constructor($x = 0, $y = 0, $z = 0, $w = 1) {
-            this.x = 0;
-            this.y = 0;
-            this.z = 0;
-            this.w = 1;
-            this.x = $x;
-            this.y = $y;
-            this.z = $z;
-            this.w = $w;
-        }
-        normalize() {
-            var le = this.length;
-            if (le == 0) {
-                return;
-            }
-            this.scaleBy(1 / le);
-        }
-        get length() {
-            return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
-        }
-        scaleBy(value) {
-            this.x *= value;
-            this.y *= value;
-            this.z *= value;
-            this.w *= value;
-        }
-        divideScalar(value) {
-            if (value != 0) {
-                this.x = this.x / value;
-                this.y = this.y / value;
-                this.z = this.z / value;
-            }
-            else {
-                this.x = 0;
-                this.y = 0;
-                this.z = 0;
-            }
-        }
-        distanceToSquared(v) {
-            return Vector3D.distance(this, v);
-        }
-        scaleByW() {
-            this.x *= this.w;
-            this.y *= this.w;
-            this.z *= this.w;
-        }
-        add(value) {
-            return new Vector3D(this.x + value.x, this.y + value.y, this.z + value.z);
-        }
-        subtract(value) {
-            return new Vector3D(this.x - value.x, this.y - value.y, this.z - value.z);
-        }
-        addByNum($x, $y, $z, $w = 0) {
-            this.x += $x;
-            this.y += $y;
-            this.z += $z;
-            this.w += $w;
-        }
-        setTo($x, $y, $z) {
-            this.x = $x;
-            this.y = $y;
-            this.z = $z;
-        }
-        setByte(byte) {
-            this.x = byte.readFloat();
-            this.y = byte.readFloat();
-            this.z = byte.readFloat();
-        }
-        cross(value) {
-            return new Vector3D(this.y * value.z - this.z * value.y, this.z * value.x - this.x * value.z, this.x * value.y - this.y * value.x);
-        }
-        dot(value) {
-            return this.x * value.x + this.y * value.y + this.z * value.z;
-        }
-        clone() {
-            return new Vector3D(this.x, this.y, this.z);
-        }
-        static distance(v1, v2) {
-            var x1 = v1.x - v2.x;
-            var y1 = v1.y - v2.y;
-            var z1 = v1.z - v2.z;
-            return Math.sqrt(x1 * x1 + y1 * y1 + z1 * z1);
-        }
-        toString() {
-            return "Vector3D(" + String(this.x) + "," + String(this.y) + "," + String(this.z) + "," + String(this.w) + ")";
-        }
-    }
-    Vector3D.X_AXIS = new Vector3D(1, 0, 0);
-    Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
-    Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
-
     class Vector2D {
         constructor($x = 0, $y = 0) {
             this.x = 0;
@@ -460,6 +199,127 @@
      * z平面放大倍数
      */
     Scene_data.SCALE_Z = 1 / Math.sin(CanvasPostionModel.SCENE_2D_ROTATION_45 * Math.PI / 180);
+
+    class GC {
+        destory() {
+        }
+    }
+
+    class ResCount extends GC {
+        constructor() {
+            super(...arguments);
+            this._useNum = 0;
+            this.idleTime = 0;
+        }
+        get useNum() {
+            return this._useNum;
+        }
+        set useNum(n) {
+            this._useNum = n;
+            if (this._useNum == 0) {
+                this.idleTime = 0;
+            }
+        }
+        clearUseNum() {
+            this._useNum--;
+            if (this._useNum <= 0) {
+                this.idleTime = ResCount.GCTime;
+            }
+        }
+    }
+    ResCount.GCTime = 4;
+
+    class Vector3D {
+        constructor($x = 0, $y = 0, $z = 0, $w = 1) {
+            this.x = 0;
+            this.y = 0;
+            this.z = 0;
+            this.w = 1;
+            this.x = $x;
+            this.y = $y;
+            this.z = $z;
+            this.w = $w;
+        }
+        normalize() {
+            var le = this.length;
+            if (le == 0) {
+                return;
+            }
+            this.scaleBy(1 / le);
+        }
+        get length() {
+            return Math.sqrt(this.x * this.x + this.y * this.y + this.z * this.z);
+        }
+        scaleBy(value) {
+            this.x *= value;
+            this.y *= value;
+            this.z *= value;
+            this.w *= value;
+        }
+        divideScalar(value) {
+            if (value != 0) {
+                this.x = this.x / value;
+                this.y = this.y / value;
+                this.z = this.z / value;
+            }
+            else {
+                this.x = 0;
+                this.y = 0;
+                this.z = 0;
+            }
+        }
+        distanceToSquared(v) {
+            return Vector3D.distance(this, v);
+        }
+        scaleByW() {
+            this.x *= this.w;
+            this.y *= this.w;
+            this.z *= this.w;
+        }
+        add(value) {
+            return new Vector3D(this.x + value.x, this.y + value.y, this.z + value.z);
+        }
+        subtract(value) {
+            return new Vector3D(this.x - value.x, this.y - value.y, this.z - value.z);
+        }
+        addByNum($x, $y, $z, $w = 0) {
+            this.x += $x;
+            this.y += $y;
+            this.z += $z;
+            this.w += $w;
+        }
+        setTo($x, $y, $z) {
+            this.x = $x;
+            this.y = $y;
+            this.z = $z;
+        }
+        setByte(byte) {
+            this.x = byte.readFloat();
+            this.y = byte.readFloat();
+            this.z = byte.readFloat();
+        }
+        cross(value) {
+            return new Vector3D(this.y * value.z - this.z * value.y, this.z * value.x - this.x * value.z, this.x * value.y - this.y * value.x);
+        }
+        dot(value) {
+            return this.x * value.x + this.y * value.y + this.z * value.z;
+        }
+        clone() {
+            return new Vector3D(this.x, this.y, this.z);
+        }
+        static distance(v1, v2) {
+            var x1 = v1.x - v2.x;
+            var y1 = v1.y - v2.y;
+            var z1 = v1.z - v2.z;
+            return Math.sqrt(x1 * x1 + y1 * y1 + z1 * z1);
+        }
+        toString() {
+            return "Vector3D(" + String(this.x) + "," + String(this.y) + "," + String(this.z) + "," + String(this.w) + ")";
+        }
+    }
+    Vector3D.X_AXIS = new Vector3D(1, 0, 0);
+    Vector3D.Y_AXIS = new Vector3D(0, 1, 0);
+    Vector3D.Z_AXIS = new Vector3D(0, 0, 1);
 
     /**
      * Endian 类中包含一些值，它们表示用于表示多字节数字的字节顺序。
@@ -1763,34 +1623,604 @@
         }
     }
 
-    class GC {
-        destory() {
+    class ResGC {
+        constructor() {
+            this._dic = new Object();
+            TimeUtil.addTimeTick(60000, () => { this.gc(); });
+        }
+        gc() {
+            //var a:number = 1;
+            for (var key in this._dic) {
+                var rc = this._dic[key];
+                if (rc.useNum <= 0) {
+                    rc.idleTime++;
+                    if (rc.idleTime >= ResCount.GCTime) {
+                        //console.log("清理 -" + key);
+                        rc.destory();
+                        delete this._dic[key];
+                    }
+                }
+            }
         }
     }
 
-    class ResCount extends GC {
-        constructor() {
-            super(...arguments);
-            this._useNum = 0;
-            this.idleTime = 0;
+    /**
+    * base64-arraybuffer
+    */
+    class Base64 {
+    }
+    Base64.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
+    Base64.encode = function (arraybuffer) {
+        var bytes = new Uint8Array(arraybuffer), i, len = bytes.length, base64 = "";
+        for (i = 0; i < len; i += 3) {
+            base64 += this.chars[bytes[i] >> 2];
+            base64 += this.chars[((bytes[i] & 3) << 4) | (bytes[i + 1] >> 4)];
+            base64 += this.chars[((bytes[i + 1] & 15) << 2) | (bytes[i + 2] >> 6)];
+            base64 += this.chars[bytes[i + 2] & 63];
         }
-        get useNum() {
-            return this._useNum;
+        if ((len % 3) === 2) {
+            base64 = base64.substring(0, base64.length - 1) + "=";
         }
-        set useNum(n) {
-            this._useNum = n;
-            if (this._useNum == 0) {
-                this.idleTime = 0;
+        else if (len % 3 === 1) {
+            base64 = base64.substring(0, base64.length - 2) + "==";
+        }
+        return base64;
+    };
+    Base64.decode = function (base64) {
+        var bufferLength = base64.length * 0.75, len = base64.length, i, p = 0, encoded1, encoded2, encoded3, encoded4;
+        if (base64[base64.length - 1] === "=") {
+            bufferLength--;
+            if (base64[base64.length - 2] === "=") {
+                bufferLength--;
             }
         }
-        clearUseNum() {
-            this._useNum--;
-            if (this._useNum <= 0) {
-                this.idleTime = ResCount.GCTime;
+        var arraybuffer = new ArrayBuffer(bufferLength), bytes = new Uint8Array(arraybuffer);
+        for (i = 0; i < len; i += 4) {
+            encoded1 = this.chars.indexOf(base64[i]);
+            encoded2 = this.chars.indexOf(base64[i + 1]);
+            encoded3 = this.chars.indexOf(base64[i + 2]);
+            encoded4 = this.chars.indexOf(base64[i + 3]);
+            bytes[p++] = (encoded1 << 2) | (encoded2 >> 4);
+            bytes[p++] = ((encoded2 & 15) << 4) | (encoded3 >> 2);
+            bytes[p++] = ((encoded3 & 3) << 6) | (encoded4 & 63);
+        }
+        return arraybuffer;
+    };
+
+    class LoadManager {
+        constructor() {
+            this._loadThreadList = new Array;
+            this._waitLoadList = new Array;
+            for (var i = 0; i < 5; i++) {
+                this._loadThreadList.push(new LoaderThread());
+            }
+        }
+        static getInstance() {
+            if (!this._instance) {
+                this._instance = new LoadManager();
+            }
+            return this._instance;
+        }
+        getVersion(vkey) {
+            if (this._versions) {
+                return this._versions[vkey] || vkey;
+            }
+            return vkey;
+        }
+        load($url, $type, $fun, $info = null, $progressFun = null) {
+            if (Scene_data.fileRoot != "") { //原生版本优化
+                $url = $url.replace(Scene_data.fileRoot, "");
+                $url = Scene_data.fileRoot + this.getVersion($url);
+            }
+            var loadInfo = new LoadInfo($url, $type, $fun, $info, $progressFun);
+            for (var i = 0; i < this._loadThreadList.length; i++) {
+                if (this._loadThreadList[i].idle) {
+                    this._loadThreadList[i].load(loadInfo);
+                    return;
+                }
+            }
+            this._waitLoadList.push(loadInfo);
+        }
+        loadWaitList() {
+            if (this._waitLoadList.length <= 0) {
+                return;
+            }
+            for (var i = 0; i < this._loadThreadList.length; i++) {
+                if (this._loadThreadList[i].idle) {
+                    this._loadThreadList[i].load(this._waitLoadList.shift());
+                    return;
+                }
             }
         }
     }
-    ResCount.GCTime = 4;
+    LoadManager.BYTE_TYPE = "BYTE_TYPE";
+    LoadManager.IMG_TYPE = "IMG_TYPE";
+    LoadManager.XML_TYPE = "XML_TYPE";
+    class LoaderThread {
+        constructor() {
+            this._xhr = new XMLHttpRequest();
+            this._xhr.onreadystatechange = () => {
+                if (!this._xhr || this._xhr.readyState !== 4) {
+                    return;
+                }
+                if (this._xhr.status !== 0 && this._xhr.status !== 200) {
+                    this.loadError();
+                    return;
+                }
+                this.loadByteXML();
+            };
+            this._xhr.onprogress = (e) => {
+                if (this._loadInfo.progressFun) {
+                    this._loadInfo.progressFun(e.loaded / e.total);
+                }
+            };
+            this._xhr.onerror = () => {
+                this.loadError();
+            };
+            this._img = new Image();
+            this._img.onload = () => {
+                this.loadImg();
+            };
+            this._img.onerror = () => {
+                this.loadError();
+            };
+            this.idle = true;
+        }
+        load(loadInfo) {
+            this._loadInfo = loadInfo;
+            this.idle = false;
+            this._url = loadInfo.url;
+            if (this._loadInfo.type == LoadManager.BYTE_TYPE) {
+                this._xhr.open("GET", loadInfo.vurl, true);
+                this._xhr.responseType = "arraybuffer";
+                this._xhr.send();
+            }
+            else if (this._loadInfo.type == LoadManager.XML_TYPE) {
+                this._xhr.open("GET", loadInfo.vurl, true);
+                this._xhr.responseType = "text";
+                this._xhr.send();
+            }
+            else if (this._loadInfo.type == LoadManager.IMG_TYPE) {
+                if (this._img.url == loadInfo.vurl) { //路径相同
+                    this.loadImg();
+                }
+                else { //执行加载
+                    this._img.url = loadInfo.vurl;
+                    this._img.src = loadInfo.vurl;
+                }
+            }
+        }
+        loadError() {
+            this.idle = true;
+            this._loadInfo = null;
+            LoadManager.getInstance().loadWaitList();
+        }
+        loadByteXML() {
+            // if(this.idle){
+            //     //console.log("加载完成*****************************"+this._url );
+            // }
+            if (this._loadInfo.info) {
+                this._loadInfo.fun(this._xhr.response, this._loadInfo.info);
+            }
+            else {
+                this._loadInfo.fun(this._xhr.response);
+            }
+            this.idle = true;
+            this._loadInfo = null;
+            LoadManager.getInstance().loadWaitList();
+        }
+        loadByteImg() {
+            this._img.src = 'data:image/png;base64,' + Base64.encode(this._xhr.response);
+        }
+        loadImg() {
+            if (this._loadInfo.info) {
+                this._loadInfo.fun(this._img, this._loadInfo.info);
+            }
+            else {
+                this._loadInfo.fun(this._img);
+            }
+            this.idle = true;
+            this._loadInfo = null;
+            LoadManager.getInstance().loadWaitList();
+        }
+    }
+    class LoadInfo {
+        constructor($url, $type, $fun, $info = null, $progressFun = null) {
+            this.url = $url;
+            this.type = $type;
+            this.fun = $fun;
+            this.info = $info;
+            this.progressFun = $progressFun;
+        }
+        get vurl() {
+            return this.url;
+        }
+    }
+
+    class UIManager {
+        constructor() {
+            this._canvas = document.createElement("canvas");
+            this._canvas.style.zIndex = "3";
+            this._canvas.width = 200;
+            this._canvas.height = 200;
+            this._canvas.style.left = 200;
+            this._canvas.style.top = 300;
+            this._ctx = this._canvas.getContext("2d");
+            this._ctx.textBaseline = "top";
+        }
+        static getInstance() {
+            if (!this._instance) {
+                this._instance = new UIManager();
+                UIManager.popClikNameFun = ($name, $id = 0) => { this.uiClikName($name, $id); };
+            }
+            return this._instance;
+        }
+        static uiClikName($name, $id) {
+        }
+        getContext2D($width, $height, alianDefault = true) {
+            this._canvas.width = $width;
+            this._canvas.height = $height;
+            this._ctx.clearRect(0, 0, $width, $height);
+            alianDefault = true;
+            if (alianDefault) {
+                this._ctx.textBaseline = "top";
+                this._ctx.textAlign = "left";
+            }
+            return this._ctx;
+        }
+        getGrayImageDatabyImg($img) {
+            var $ctx = UIManager.getInstance().getContext2D($img.width, $img.height, false);
+            $ctx.drawImage($img, 0, 0);
+            var $imgData = $ctx.getImageData(0, 0, $img.width, $img.height);
+            var $gray;
+            for (var i = 0; i < $imgData.data.length; i += 4) {
+                $gray = Math.floor($imgData.data[i + 0] * 0.3) + Math.floor($imgData.data[i + 1] * 0.59) + Math.floor($imgData.data[i + 2] * 0.11);
+                $imgData.data[i + 0] = $gray;
+                $imgData.data[i + 1] = $gray;
+                $imgData.data[i + 2] = $gray;
+            }
+            return $imgData;
+        }
+        makeCtxToGray($ctx, $rect) {
+            var $imgData = $ctx.getImageData($rect.x, $rect.y, $rect.width, $rect.height);
+            var $gray;
+            for (var i = 0; i < $imgData.data.length; i += 4) {
+                $gray = Math.floor($imgData.data[i + 0] * 0.3) + Math.floor($imgData.data[i + 1] * 0.59) + Math.floor($imgData.data[i + 2] * 0.11);
+                $gray = $gray * 0.5 + 0.5;
+                $imgData.data[i + 0] = $gray;
+                $imgData.data[i + 1] = $gray;
+                $imgData.data[i + 2] = $gray;
+            }
+            $ctx.putImageData($imgData, $rect.x, $rect.y);
+        }
+        showCanvas($x = 0, $y = 0) {
+            this._canvas.style.left = $x;
+            this._canvas.style.top = $y;
+            document.getElementById("root").appendChild(this._canvas);
+        }
+    }
+    UIManager.cando = true; //  标记只会选择一次。此循环结束
+
+    class TextureRes extends ResCount {
+        destory() {
+            Scene_data.context3D.deleteTexture(this.texture);
+        }
+    }
+
+    class TextureManager extends ResGC {
+        constructor() {
+            super();
+            this._init = false;
+            this._loadDic = new Object();
+            this._resDic = new Object();
+            this.initDefaultLightMapTexture();
+        }
+        static getInstance() {
+            if (!this._instance) {
+                this._instance = new TextureManager();
+            }
+            return this._instance;
+        }
+        hasTexture($url) {
+            if (this._dic[$url]) {
+                return true;
+            }
+            return false;
+        }
+        getTexture($url, $fun, $wrapType = 0, $info = null, $filteType = 0, $mipmapType = 0) {
+            if (this._dic[$url]) {
+                if ($info) {
+                    $fun(this._dic[$url], $info);
+                }
+                else {
+                    $fun(this._dic[$url]);
+                }
+                this._dic[$url].useNum++;
+                return;
+            }
+            var textureLoad = new TextureLoad($fun, $info, $url, $wrapType, $filteType, $mipmapType);
+            if (this._loadDic[$url]) {
+                var ary = this._loadDic[$url];
+                ary.push(textureLoad);
+                return;
+            }
+            this._loadDic[$url] = new Array;
+            this._loadDic[$url].push(textureLoad);
+            if (this._resDic[$url]) {
+                this.loadTextureCom(this._resDic[$url], textureLoad);
+                delete this._resDic[$url];
+            }
+            else {
+                LoadManager.getInstance().load($url, LoadManager.IMG_TYPE, ($img, _info) => {
+                    this.loadTextureCom($img, _info);
+                }, textureLoad);
+            }
+        }
+        getImageData($url, $fun) {
+            LoadManager.getInstance().load($url, LoadManager.IMG_TYPE, ($img) => {
+                var ctx = UIManager.getInstance().getContext2D($img.width, $img.height, false);
+                ctx.drawImage($img, 0, 0, $img.width, $img.height);
+                var imgData = ctx.getImageData(0, 0, $img.width, $img.height);
+                $fun(imgData);
+            });
+        }
+        getImgResByurl($url) {
+            return this._resDic[$url];
+        }
+        addRes($url, $img) {
+            if (!this._dic[$url] && !this._resDic[$url]) {
+                this._resDic[$url] = $img;
+            }
+        }
+        addImgRes($url, $img) {
+            this._resDic[$url] = $img;
+            var texture = Scene_data.context3D.getTexture($img);
+            var textres = new TextureRes();
+            textres.texture = texture;
+            textres.width = $img.width;
+            textres.height = $img.height;
+            textres.useNum++;
+            this._dic[$url] = textres;
+        }
+        getCanvasTexture(ctx) {
+            var tres = new TextureRes;
+            var texture = Scene_data.context3D.getTexture(ctx.canvas, 0, 0);
+            tres.texture = texture;
+            return tres;
+        }
+        getImageDataTexture(imgdata) {
+            var texture = Scene_data.context3D.getTexture(imgdata, 0, 0);
+            return texture;
+        }
+        getTextureRes($img) {
+            var tres = new TextureRes;
+            var texture = Scene_data.context3D.getTexture($img, 0, 0);
+            tres.texture = texture;
+            return tres;
+        }
+        updateTexture($texture, $offsetx, $offsety, ctx) {
+            Scene_data.context3D.updateTexture($texture, $offsetx, $offsety, ctx.canvas);
+        }
+        loadTextureCom($img, _info) {
+            var texture = Scene_data.context3D.getTexture($img, _info.wrap, _info.filter, _info.mipmap);
+            var textres = new TextureRes();
+            textres.texture = texture;
+            textres.width = $img.width;
+            textres.height = $img.height;
+            var ary = this._loadDic[_info.url];
+            for (var i = 0; i < ary.length; i++) {
+                if (ary[i].info) {
+                    ary[i].fun(textres, ary[i].info);
+                }
+                else {
+                    ary[i].fun(textres);
+                }
+                textres.useNum++;
+            }
+            delete this._loadDic[_info.url];
+            this._dic[_info.url] = textres;
+        }
+        initDefaultLightMapTexture() {
+            // var canvas: any = document.createElement("canvas");
+            // var ctx: CanvasRenderingContext2D = canvas.getContext("2d");
+            // canvas.width = 32;
+            // canvas.height = 32;
+            // ctx.fillStyle = "rgb(" + 255 / 5 + "," + 255 / 5 + "," + 255 / 5 + ")";
+            // ctx.fillRect(0, 0, 32, 32);
+            // this.defaultLightMap = Scene_data.context3D.getTexture(canvas);
+            //todo
+            this.getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture) => {
+                this.defaultLightMap = $texture.texture;
+            });
+            // this.defaultLightMap=Scene_data.tex32;
+        }
+        gc() {
+            super.gc();
+        }
+    }
+    class TextureLoad {
+        constructor($fun, $info, $url, $wrap, $filter, $mipmap) {
+            this.fun = $fun;
+            this.info = $info;
+            this.url = $url;
+            this.wrap = $wrap;
+            this.filter = $filter;
+            this.mipmap = $mipmap;
+        }
+    }
+
+    class Engine {
+        static init() {
+            /*      var isIpad = /ipad/i.test(navigator.userAgent);
+                 var isIphone = /iPhone/i.test(navigator.userAgent);
+                 var isAndroid = /android/i.test(navigator.userAgent);
+                 var isWindow = /iindow/i.test(navigator.userAgent);
+         
+                 var sUserAgent = navigator.userAgent.toLowerCase();
+                 ////console.log("--sUserAgent--",sUserAgent,isIpad,isIphone,isAndroid,isWindow);
+                 if (isIpad || isIphone || isAndroid) {
+                     Scene_data.isPc = false;
+                 } else {
+                     Scene_data.isPc = true;
+                 }
+         
+                 if (isIpad || isIphone) {
+                     Scene_data.isIos = true;
+                 } else {
+                     Scene_data.isIos = false;
+                 }
+         
+                 Scene_data.vpMatrix = new Matrix3D;
+                 Scene_data.canvas3D = $caves;
+                 Scene_data.context3D = new Context3D();
+                 Scene_data.context3D.init($caves);
+         
+                 Scene_data.cam3D = new Camera3D;
+                 Scene_data.focus3D = new Object3D;
+                 Scene_data.focus3D.x = 0;
+                 Scene_data.focus3D.y = 0;
+                 Scene_data.focus3D.z = 0;
+               //  Scene_data.focus3D.rotationY = 135;
+               //  Scene_data.focus3D.rotationX = -45;
+         
+                 Scene_data.light = new LightVo();
+         
+                 Engine.testBlob();
+         
+                 Engine.resetSize();
+         
+                 Engine.initShadow();
+         
+                 TimeUtil.init();
+         
+                 PathManager.init(); */
+            //todo
+            TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/brdf_ltu.jpg", ($texture) => {
+                Scene_data.tex128 = $texture.texture;
+            }, 1);
+            TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture) => {
+                Scene_data.tex32 = $texture.texture;
+            });
+        }
+        static resetSize() {
+            /*        if (Engine.needInputTxt) {
+                       return;
+                   }
+                   //Scene_data.stageWidth = document.documentElement.clientWidth;
+                   //Scene_data.stageHeight = document.documentElement.clientHeight;
+                   //var flag: boolean = false;
+           
+                   if (document.body.clientWidth > document.body.clientHeight) {
+                       Scene_data.stageWidth = document.body.clientWidth;
+                       Scene_data.stageHeight = document.body.clientHeight;
+                       Scene_data.verticalScene = false;
+                   } else {
+                       Scene_data.stageWidth = document.body.clientHeight;
+                       Scene_data.stageHeight = document.body.clientWidth;
+                       Scene_data.verticalScene = true;
+                   }
+           
+                   // Scene_data.stageWidth = document.body.clientWidth;
+                   // Scene_data.stageHeight = document.body.clientHeight;
+                   // Scene_data.verticalScene = false;
+           
+                   if (!this.needVertical) {
+                       Scene_data.stageWidth = document.body.clientWidth;
+                       Scene_data.stageHeight = document.body.clientHeight;
+                       Scene_data.verticalScene = false;
+                   }
+           
+                   Scene_data.canvas3D.width = Scene_data.stageWidth;
+                   Scene_data.canvas3D.height = Scene_data.stageHeight;
+           
+           
+                   Scene_data.context3D.resetSize(Scene_data.stageWidth, Scene_data.stageHeight);
+           
+           
+                   this.resetViewMatrx3D()
+           
+                   Scene_data.canvas3D.style.position = "absolute";
+                   Scene_data.canvas3D.style.left = "0px";
+                   Scene_data.canvas3D.style.top = "0px";
+           
+                   if (Scene_data.verticalScene) {
+                       Scene_data.canvas3D.style.transform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
+                       //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
+                   } else {
+           
+                       Scene_data.canvas3D.style.transform = "matrix(1,0,0,1,0,0)";
+                       //Scene_data.canvas3D.style.webkitTransform = "matrix(0,1,-1,0," + Scene_data.stageHeight + ",0)";
+                   }
+           
+                   Scene_data.canvas3D.style.transformOrigin = "0px 0px 0px";
+           
+                   Scene_data.canvas3D.style.top = "0px"; */
+        }
+        static resetViewMatrx3D() {
+            /*         if (Scene_data.viewMatrx3D) {
+                        Scene_data.viewMatrx3D.identity()
+                    } else {
+                        Scene_data.viewMatrx3D = new Matrix3D;
+                    }
+                    var fovw: number = Scene_data.stageWidth
+                    var fovh: number = Scene_data.stageHeight
+                    Scene_data.sceneViewHW = Math.max(fovw, fovh)
+            
+                    Scene_data.viewMatrx3D.perspectiveFieldOfViewLH(this.sceneCamScale, 1, 50, Scene_data.camFar);
+                    Scene_data.viewMatrx3D.appendScale(1 * (Scene_data.sceneViewHW / fovw * 2), fovw / fovh * (Scene_data.sceneViewHW / fovw * 2), 1);
+            
+             */
+        }
+        /* public static update(): void {
+              TimeUtil.update();
+             FpsMc.update();
+         }*/
+        static unload() {
+            //NetManager.getInstance().close();
+        }
+    }
+    /*  public static resReady(): void {
+         Engine.initPbr();
+     }
+
+     public static testBlob(): void {
+
+         //Scene_data.supportBlob = false;
+         //return;
+
+         try {
+             var blob = new Blob();
+         } catch (e) {
+             Scene_data.supportBlob = false;
+             return;
+         }
+         Scene_data.supportBlob = true;
+     }
+
+     public static initPbr(): void {
+         if (!Scene_data.pubLut) {
+             TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/brdf_ltu.jpg", ($texture: TextureRes) => {
+                 Scene_data.pubLut = $texture.texture;
+             }, 1);
+         }
+
+         if (!Scene_data.skyCubeMap) {
+             TextureManager.getInstance().loadCubeTexture(Scene_data.fileRoot + "base/cube/e", ($ary: any) => {
+                 Scene_data.skyCubeMap = $ary;
+             })
+         }
+
+
+     }
+
+     public static initShadow(): void {
+         TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture: TextureRes) => {
+             Display3dShadow.texture = $texture.texture;
+         });
+     } */
+    Engine.needVertical = true;
+    Engine.needInputTxt = false; //在输入文本时，将不再可调整大小
+    Engine.sceneCamScale = 1.76;
 
     class Shader3D extends ResCount {
         constructor() {
@@ -3147,429 +3577,6 @@
         }
     }
 
-    class ResGC {
-        constructor() {
-            this._dic = new Object();
-            TimeUtil.addTimeTick(60000, () => { this.gc(); });
-        }
-        gc() {
-            //var a:number = 1;
-            for (var key in this._dic) {
-                var rc = this._dic[key];
-                if (rc.useNum <= 0) {
-                    rc.idleTime++;
-                    if (rc.idleTime >= ResCount.GCTime) {
-                        //console.log("清理 -" + key);
-                        rc.destory();
-                        delete this._dic[key];
-                    }
-                }
-            }
-        }
-    }
-
-    /**
-    * base64-arraybuffer
-    */
-    class Base64 {
-    }
-    Base64.chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
-    Base64.encode = function (arraybuffer) {
-        var bytes = new Uint8Array(arraybuffer), i, len = bytes.length, base64 = "";
-        for (i = 0; i < len; i += 3) {
-            base64 += this.chars[bytes[i] >> 2];
-            base64 += this.chars[((bytes[i] & 3) << 4) | (bytes[i + 1] >> 4)];
-            base64 += this.chars[((bytes[i + 1] & 15) << 2) | (bytes[i + 2] >> 6)];
-            base64 += this.chars[bytes[i + 2] & 63];
-        }
-        if ((len % 3) === 2) {
-            base64 = base64.substring(0, base64.length - 1) + "=";
-        }
-        else if (len % 3 === 1) {
-            base64 = base64.substring(0, base64.length - 2) + "==";
-        }
-        return base64;
-    };
-    Base64.decode = function (base64) {
-        var bufferLength = base64.length * 0.75, len = base64.length, i, p = 0, encoded1, encoded2, encoded3, encoded4;
-        if (base64[base64.length - 1] === "=") {
-            bufferLength--;
-            if (base64[base64.length - 2] === "=") {
-                bufferLength--;
-            }
-        }
-        var arraybuffer = new ArrayBuffer(bufferLength), bytes = new Uint8Array(arraybuffer);
-        for (i = 0; i < len; i += 4) {
-            encoded1 = this.chars.indexOf(base64[i]);
-            encoded2 = this.chars.indexOf(base64[i + 1]);
-            encoded3 = this.chars.indexOf(base64[i + 2]);
-            encoded4 = this.chars.indexOf(base64[i + 3]);
-            bytes[p++] = (encoded1 << 2) | (encoded2 >> 4);
-            bytes[p++] = ((encoded2 & 15) << 4) | (encoded3 >> 2);
-            bytes[p++] = ((encoded3 & 3) << 6) | (encoded4 & 63);
-        }
-        return arraybuffer;
-    };
-
-    class LoadManager {
-        constructor() {
-            this._loadThreadList = new Array;
-            this._waitLoadList = new Array;
-            for (var i = 0; i < 5; i++) {
-                this._loadThreadList.push(new LoaderThread());
-            }
-        }
-        static getInstance() {
-            if (!this._instance) {
-                this._instance = new LoadManager();
-            }
-            return this._instance;
-        }
-        getVersion(vkey) {
-            if (this._versions) {
-                return this._versions[vkey] || vkey;
-            }
-            return vkey;
-        }
-        load($url, $type, $fun, $info = null, $progressFun = null) {
-            if (Scene_data.fileRoot != "") { //原生版本优化
-                $url = $url.replace(Scene_data.fileRoot, "");
-                $url = Scene_data.fileRoot + this.getVersion($url);
-            }
-            var loadInfo = new LoadInfo($url, $type, $fun, $info, $progressFun);
-            for (var i = 0; i < this._loadThreadList.length; i++) {
-                if (this._loadThreadList[i].idle) {
-                    this._loadThreadList[i].load(loadInfo);
-                    return;
-                }
-            }
-            this._waitLoadList.push(loadInfo);
-        }
-        loadWaitList() {
-            if (this._waitLoadList.length <= 0) {
-                return;
-            }
-            for (var i = 0; i < this._loadThreadList.length; i++) {
-                if (this._loadThreadList[i].idle) {
-                    this._loadThreadList[i].load(this._waitLoadList.shift());
-                    return;
-                }
-            }
-        }
-    }
-    LoadManager.BYTE_TYPE = "BYTE_TYPE";
-    LoadManager.IMG_TYPE = "IMG_TYPE";
-    LoadManager.XML_TYPE = "XML_TYPE";
-    class LoaderThread {
-        constructor() {
-            this._xhr = new XMLHttpRequest();
-            this._xhr.onreadystatechange = () => {
-                if (!this._xhr || this._xhr.readyState !== 4) {
-                    return;
-                }
-                if (this._xhr.status !== 0 && this._xhr.status !== 200) {
-                    this.loadError();
-                    return;
-                }
-                this.loadByteXML();
-            };
-            this._xhr.onprogress = (e) => {
-                if (this._loadInfo.progressFun) {
-                    this._loadInfo.progressFun(e.loaded / e.total);
-                }
-            };
-            this._xhr.onerror = () => {
-                this.loadError();
-            };
-            this._img = new Image();
-            this._img.onload = () => {
-                this.loadImg();
-            };
-            this._img.onerror = () => {
-                this.loadError();
-            };
-            this.idle = true;
-        }
-        load(loadInfo) {
-            this._loadInfo = loadInfo;
-            this.idle = false;
-            this._url = loadInfo.url;
-            if (this._loadInfo.type == LoadManager.BYTE_TYPE) {
-                this._xhr.open("GET", loadInfo.vurl, true);
-                this._xhr.responseType = "arraybuffer";
-                this._xhr.send();
-            }
-            else if (this._loadInfo.type == LoadManager.XML_TYPE) {
-                this._xhr.open("GET", loadInfo.vurl, true);
-                this._xhr.responseType = "text";
-                this._xhr.send();
-            }
-            else if (this._loadInfo.type == LoadManager.IMG_TYPE) {
-                if (this._img.url == loadInfo.vurl) { //路径相同
-                    this.loadImg();
-                }
-                else { //执行加载
-                    this._img.url = loadInfo.vurl;
-                    this._img.src = loadInfo.vurl;
-                }
-            }
-        }
-        loadError() {
-            this.idle = true;
-            this._loadInfo = null;
-            LoadManager.getInstance().loadWaitList();
-        }
-        loadByteXML() {
-            // if(this.idle){
-            //     //console.log("加载完成*****************************"+this._url );
-            // }
-            if (this._loadInfo.info) {
-                this._loadInfo.fun(this._xhr.response, this._loadInfo.info);
-            }
-            else {
-                this._loadInfo.fun(this._xhr.response);
-            }
-            this.idle = true;
-            this._loadInfo = null;
-            LoadManager.getInstance().loadWaitList();
-        }
-        loadByteImg() {
-            this._img.src = 'data:image/png;base64,' + Base64.encode(this._xhr.response);
-        }
-        loadImg() {
-            if (this._loadInfo.info) {
-                this._loadInfo.fun(this._img, this._loadInfo.info);
-            }
-            else {
-                this._loadInfo.fun(this._img);
-            }
-            this.idle = true;
-            this._loadInfo = null;
-            LoadManager.getInstance().loadWaitList();
-        }
-    }
-    class LoadInfo {
-        constructor($url, $type, $fun, $info = null, $progressFun = null) {
-            this.url = $url;
-            this.type = $type;
-            this.fun = $fun;
-            this.info = $info;
-            this.progressFun = $progressFun;
-        }
-        get vurl() {
-            return this.url;
-        }
-    }
-
-    class UIManager {
-        constructor() {
-            this._canvas = document.createElement("canvas");
-            this._canvas.style.zIndex = "3";
-            this._canvas.width = 200;
-            this._canvas.height = 200;
-            this._canvas.style.left = 200;
-            this._canvas.style.top = 300;
-            this._ctx = this._canvas.getContext("2d");
-            this._ctx.textBaseline = "top";
-        }
-        static getInstance() {
-            if (!this._instance) {
-                this._instance = new UIManager();
-                UIManager.popClikNameFun = ($name, $id = 0) => { this.uiClikName($name, $id); };
-            }
-            return this._instance;
-        }
-        static uiClikName($name, $id) {
-        }
-        getContext2D($width, $height, alianDefault = true) {
-            this._canvas.width = $width;
-            this._canvas.height = $height;
-            this._ctx.clearRect(0, 0, $width, $height);
-            alianDefault = true;
-            if (alianDefault) {
-                this._ctx.textBaseline = "top";
-                this._ctx.textAlign = "left";
-            }
-            return this._ctx;
-        }
-        getGrayImageDatabyImg($img) {
-            var $ctx = UIManager.getInstance().getContext2D($img.width, $img.height, false);
-            $ctx.drawImage($img, 0, 0);
-            var $imgData = $ctx.getImageData(0, 0, $img.width, $img.height);
-            var $gray;
-            for (var i = 0; i < $imgData.data.length; i += 4) {
-                $gray = Math.floor($imgData.data[i + 0] * 0.3) + Math.floor($imgData.data[i + 1] * 0.59) + Math.floor($imgData.data[i + 2] * 0.11);
-                $imgData.data[i + 0] = $gray;
-                $imgData.data[i + 1] = $gray;
-                $imgData.data[i + 2] = $gray;
-            }
-            return $imgData;
-        }
-        makeCtxToGray($ctx, $rect) {
-            var $imgData = $ctx.getImageData($rect.x, $rect.y, $rect.width, $rect.height);
-            var $gray;
-            for (var i = 0; i < $imgData.data.length; i += 4) {
-                $gray = Math.floor($imgData.data[i + 0] * 0.3) + Math.floor($imgData.data[i + 1] * 0.59) + Math.floor($imgData.data[i + 2] * 0.11);
-                $gray = $gray * 0.5 + 0.5;
-                $imgData.data[i + 0] = $gray;
-                $imgData.data[i + 1] = $gray;
-                $imgData.data[i + 2] = $gray;
-            }
-            $ctx.putImageData($imgData, $rect.x, $rect.y);
-        }
-        showCanvas($x = 0, $y = 0) {
-            this._canvas.style.left = $x;
-            this._canvas.style.top = $y;
-            document.getElementById("root").appendChild(this._canvas);
-        }
-    }
-    UIManager.cando = true; //  标记只会选择一次。此循环结束
-
-    class TextureRes extends ResCount {
-        destory() {
-            Scene_data.context3D.deleteTexture(this.texture);
-        }
-    }
-
-    class TextureManager extends ResGC {
-        constructor() {
-            super();
-            this._loadDic = new Object();
-            this._resDic = new Object();
-            this.initDefaultLightMapTexture();
-        }
-        static getInstance() {
-            if (!this._instance) {
-                this._instance = new TextureManager();
-            }
-            return this._instance;
-        }
-        hasTexture($url) {
-            if (this._dic[$url]) {
-                return true;
-            }
-            return false;
-        }
-        getTexture($url, $fun, $wrapType = 0, $info = null, $filteType = 0, $mipmapType = 0) {
-            // if ($url.indexOf("zc_deng_00.png") != -1) {
-            //    //console.log("22222");
-            // }
-            if (this._dic[$url]) {
-                if ($info) {
-                    $fun(this._dic[$url], $info);
-                }
-                else {
-                    $fun(this._dic[$url]);
-                }
-                this._dic[$url].useNum++;
-                return;
-            }
-            var textureLoad = new TextureLoad($fun, $info, $url, $wrapType, $filteType, $mipmapType);
-            if (this._loadDic[$url]) {
-                var ary = this._loadDic[$url];
-                ary.push(textureLoad);
-                return;
-            }
-            this._loadDic[$url] = new Array;
-            this._loadDic[$url].push(textureLoad);
-            if (this._resDic[$url]) {
-                this.loadTextureCom(this._resDic[$url], textureLoad);
-                delete this._resDic[$url];
-            }
-            else {
-                LoadManager.getInstance().load($url, LoadManager.IMG_TYPE, ($img, _info) => {
-                    this.loadTextureCom($img, _info);
-                }, textureLoad);
-            }
-        }
-        getImageData($url, $fun) {
-            LoadManager.getInstance().load($url, LoadManager.IMG_TYPE, ($img) => {
-                var ctx = UIManager.getInstance().getContext2D($img.width, $img.height, false);
-                ctx.drawImage($img, 0, 0, $img.width, $img.height);
-                var imgData = ctx.getImageData(0, 0, $img.width, $img.height);
-                $fun(imgData);
-            });
-        }
-        getImgResByurl($url) {
-            return this._resDic[$url];
-        }
-        addRes($url, $img) {
-            if (!this._dic[$url] && !this._resDic[$url]) {
-                this._resDic[$url] = $img;
-            }
-        }
-        addImgRes($url, $img) {
-            this._resDic[$url] = $img;
-            var texture = Scene_data.context3D.getTexture($img);
-            var textres = new TextureRes();
-            textres.texture = texture;
-            textres.width = $img.width;
-            textres.height = $img.height;
-            textres.useNum++;
-            this._dic[$url] = textres;
-        }
-        getCanvasTexture(ctx) {
-            var tres = new TextureRes;
-            var texture = Scene_data.context3D.getTexture(ctx.canvas, 0, 0);
-            tres.texture = texture;
-            return tres;
-        }
-        getImageDataTexture(imgdata) {
-            var texture = Scene_data.context3D.getTexture(imgdata, 0, 0);
-            return texture;
-        }
-        getTextureRes($img) {
-            var tres = new TextureRes;
-            var texture = Scene_data.context3D.getTexture($img, 0, 0);
-            tres.texture = texture;
-            return tres;
-        }
-        updateTexture($texture, $offsetx, $offsety, ctx) {
-            Scene_data.context3D.updateTexture($texture, $offsetx, $offsety, ctx.canvas);
-        }
-        loadTextureCom($img, _info) {
-            var texture = Scene_data.context3D.getTexture($img, _info.wrap, _info.filter, _info.mipmap);
-            var textres = new TextureRes();
-            textres.texture = texture;
-            textres.width = $img.width;
-            textres.height = $img.height;
-            var ary = this._loadDic[_info.url];
-            for (var i = 0; i < ary.length; i++) {
-                if (ary[i].info) {
-                    ary[i].fun(textres, ary[i].info);
-                }
-                else {
-                    ary[i].fun(textres);
-                }
-                textres.useNum++;
-            }
-            delete this._loadDic[_info.url];
-            this._dic[_info.url] = textres;
-        }
-        initDefaultLightMapTexture() {
-            var canvas = document.createElement("canvas");
-            var ctx = canvas.getContext("2d");
-            canvas.width = 32;
-            canvas.height = 32;
-            ctx.fillStyle = "rgb(" + 255 / 5 + "," + 255 / 5 + "," + 255 / 5 + ")";
-            ctx.fillRect(0, 0, 32, 32);
-            this.defaultLightMap = Scene_data.context3D.getTexture(canvas);
-        }
-        gc() {
-            super.gc();
-        }
-    }
-    class TextureLoad {
-        constructor($fun, $info, $url, $wrap, $filter, $mipmap) {
-            this.fun = $fun;
-            this.info = $info;
-            this.url = $url;
-            this.wrap = $wrap;
-            this.filter = $filter;
-            this.mipmap = $mipmap;
-        }
-    }
-
     class MaterialBaseParam extends GC {
         destory() {
             for (var i = 0; i < this.dynamicTexList.length; i++) {
@@ -4477,9 +4484,7 @@
         loadDynamicTexUtil(material) {
             var dynamicTexList = material.dynamicTexList;
             for (var i = 0; i < dynamicTexList.length; i++) {
-                if (dynamicTexList[i].isParticleColor) {
-                    dynamicTexList[i].creatTextureByCurve();
-                }
+                if (dynamicTexList[i].isParticleColor) ;
                 else {
                     TextureManager.getInstance().getTexture(Scene_data.fileRoot + dynamicTexList[i].url, ($textureVo, $texItem) => {
                         $texItem.textureRes = $textureVo;
@@ -4511,11 +4516,11 @@
 
     class ColorTransition {
         constructor() {
-            this._canvas = document.createElement("canvas");
-            this._cxt = this._canvas.getContext("2d");
-            this._gnt = this._cxt.createLinearGradient(0, 0, 128, 0);
-            this._canvas.style.zIndex = "1";
-            //document.body.appendChild(this._canvas);
+            //todo
+            // this._canvas = document.createElement("canvas");
+            // this._cxt = this._canvas.getContext("2d");
+            // this._gnt = this._cxt.createLinearGradient(0, 0, 128, 0);
+            // this._canvas.style.zIndex = "1"; 
         }
         static getInstance() {
             if (!this._instance) {
@@ -4524,30 +4529,33 @@
             return this._instance;
         }
         getImageData($data) {
-            var length = $data.pos.length;
-            var color = new Vector3D();
-            for (var i = 0; i < length; i++) {
-                Util.hexToArgb($data.color[i], false, color);
-                this._gnt.addColorStop($data.pos[i] / 255, 'rgba(' + color.x + ',' + color.y + ',' + color.z + ',' + $data.alpha[i] + ')');
-            }
-            this._cxt.fillStyle = this._gnt;
-            this._cxt.fillRect(0, 0, 128, 2);
-            return this._cxt.getImageData(0, 0, 128, 2);
+            //todo
+            // var length: number = $data.pos.length;
+            // var color: Vector3D = new Vector3D();
+            // for (var i: number = 0; i < length; i++) {
+            //     Util.hexToArgb($data.color[i], false, color);
+            //     this._gnt.addColorStop($data.pos[i] / 255, 'rgba(' + color.x + ',' + color.y + ',' + color.z + ',' + $data.alpha[i] + ')');
+            // }
+            // this._cxt.fillStyle = this._gnt;
+            // this._cxt.fillRect(0, 0, 128, 2);
+            // return this._cxt.getImageData(0, 0, 128, 2);
+            return null;
         }
         getImageDataByVec($data, $lenght) {
-            var imgData = this._cxt.createImageData(64, 1);
-            var index;
-            var baseindex;
-            for (var i = 0; i < 64; i++) {
-                index = i * 4;
-                baseindex = Util.float2int(i / 64 * $lenght) * 4;
-                imgData.data[index] = $data[baseindex];
-                imgData.data[index + 1] = $data[baseindex + 1];
-                imgData.data[index + 2] = $data[baseindex + 2];
-                imgData.data[index + 3] = $data[baseindex + 3];
-            }
-            return imgData;
-            //Scene_data.context3D.getTexture(imgData);
+            //todo
+            // var imgData: ImageData = this._cxt.createImageData(64, 1);
+            // var index: number;
+            // var baseindex: number;
+            // for (var i: number = 0; i < 64; i++) {
+            //     index = i * 4;
+            //     baseindex = Util.float2int(i / 64 * $lenght) * 4;
+            //     imgData.data[index] = $data[baseindex];
+            //     imgData.data[index + 1] = $data[baseindex + 1];
+            //     imgData.data[index + 2] = $data[baseindex + 2];
+            //     imgData.data[index + 3] = $data[baseindex + 3];
+            // }
+            // return imgData;
+            return null;
         }
         setData() {
         }
@@ -13942,7 +13950,11 @@
             });
         }
         get lightMapTexture() {
-            if (!this.lightMapTextureRes) ;
+            if (!this.lightMapTextureRes) {
+                //alert("无光照贴图") 
+                //console.log("无光照贴图------------------------------------");
+                return null;
+            }
             return this.lightMapTextureRes.texture;
         }
         setMaterialUrl(value, $paramData = null) {
@@ -14222,7 +14234,9 @@
             for (var i = 0; i < texVec.length; i++) {
                 if (texVec[i].type == TexItem.LIGHTMAP) {
                     //_context.setTextureAt(texVec[i].id, lightMapTexture);
-                    Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, this.lightMapTexture, texVec[i].id);
+                    //todo
+                    if (this.lightMapTexture)
+                        Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, this.lightMapTexture, texVec[i].id);
                 }
                 else if (texVec[i].type == TexItem.LTUMAP && Scene_data.pubLut) {
                     Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, Scene_data.pubLut, texVec[i].id);
@@ -17782,7 +17796,7 @@
             this.setTextureNum = 0;
             this.setProgramNum = 0;
         }
-        init($caves) {
+        init() {
             //this.renderContext = $caves.getContext("experimental-webgl");
             // this.renderContext =  Laya.LayaGL.instance;
             this.renderContext = Laya.WebGLContext["mainContext"];
@@ -18343,12 +18357,12 @@
         static resetSize(width, height) {
             Scene_data.stageWidth = width;
             Scene_data.stageHeight = height;
-            Scene_data.canvas3D.width = Scene_data.stageWidth;
-            Scene_data.canvas3D.height = Scene_data.stageHeight;
+            // Scene_data.canvas3D.width = Scene_data.stageWidth;
+            // Scene_data.canvas3D.height = Scene_data.stageHeight;
             Scene_data.context3D.resetSize(Scene_data.stageWidth, Scene_data.stageHeight);
             Engine.resetViewMatrx3D();
         }
-        static init($caves) {
+        static init() {
             var isIpad = /ipad/i.test(navigator.userAgent);
             var isIphone = /iPhone/i.test(navigator.userAgent);
             var isAndroid = /android/i.test(navigator.userAgent);
@@ -18362,9 +18376,9 @@
                 Scene_data.isPc = true;
             }
             Scene_data.vpMatrix = new Matrix3D;
-            Scene_data.canvas3D = $caves;
+            // Scene_data.canvas3D = $caves;
             Scene_data.context3D = new Context3D();
-            Scene_data.context3D.init($caves);
+            Scene_data.context3D.init();
             Scene_data.cam3D = new Camera3D;
             Scene_data.focus3D = new Object3D;
             /*         Scene_data.focus3D.x = 0;
@@ -18402,8 +18416,8 @@
             Engine.resetViewMatrx3D();
             CanvasPostionModel.getInstance().resetSize();
         }
-        static init($caves) {
-            OverrideEngine.init($caves);
+        static init() {
+            OverrideEngine.init();
             Scene_data.focus3D.x = 0;
             Scene_data.focus3D.y = 0;
             Scene_data.focus3D.z = 0;
@@ -18446,8 +18460,8 @@
                 // LayaOverride2dSceneManager.initConfig();
                 //替换Engine引擎对象；
                 LayaOverride2dEngine.initConfig();
-                Engine.init(mainpan3d.canvas); //初始化场景
-                Engine.resetSize(mainpan3d.canvas.width, mainpan3d.canvas.height); //设置canvas大小
+                Engine.init(); //初始化场景
+                Engine.resetSize(); //设置canvas大小
                 //    Engine.initPbr();
                 LayaScene2dInit.isConfig = true; //完成
                 SceneManager.getInstance().ready = true; //场景update可以
@@ -23653,7 +23667,6 @@
             let cv = Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
             Laya["Physics"] && Laya["Physics"].enable();
             Laya["DebugPanel"] && Laya["DebugPanel"].enable();
-            mainpan3d.canvas = cv;
             Laya.stage.scaleMode = GameConfig.scaleMode;
             Laya.stage.screenMode = GameConfig.screenMode;
             Laya.stage.alignV = GameConfig.alignV;

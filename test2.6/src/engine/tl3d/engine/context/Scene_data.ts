@@ -10,7 +10,7 @@ export class Scene_data {
     public static isPc: boolean;
     public static isIos: boolean;
     public static context3D: Context3D;
-    public static canvas3D: HTMLCanvasElement;
+    // public static canvas3D: HTMLCanvasElement;
     public static stageWidth: number;
     public static stageHeight: number;
     public static sceneViewHW: number = 500;
@@ -28,6 +28,8 @@ export class Scene_data {
 
     public static skyCubeMap: Array<WebGLTexture>;
     public static pubLut: WebGLTexture;
+    public static tex128:WebGLTexture;
+    public static tex32:WebGLTexture;
 
     public static frameTime: number = 1000 / 60;
     public static MAX_NUMBER: number = 10000000;
