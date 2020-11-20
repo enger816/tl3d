@@ -210,10 +210,14 @@ export class ShadowModel {
         ProgramManager.getInstance().registe(BaseShadowShader.BaseShadowShader, new BaseShadowShader);
         var $shader: Shader3D = ProgramManager.getInstance().getProgram(BaseShadowShader.BaseShadowShader);
         if (!this._uvTextureRes) {
-            var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D(128, 128, false);
-            $ctx.fillStyle = "rgb(255,0,255)";
-            $ctx.fillRect(0, 0, 128, 128);
-            this._uvTextureRes = TextureManager.getInstance().getCanvasTexture($ctx)
+            // var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D(128, 128, false);
+            // $ctx.fillStyle = "rgb(255,0,255)";
+            // $ctx.fillRect(0, 0, 128, 128);
+            // this._uvTextureRes = TextureManager.getInstance().getCanvasTexture($ctx)
+            //todo   jpg
+            var tres=new TextureRes();
+            tres.texture=Scene_data.tex128;
+            this._uvTextureRes=tres;
         }
         Scene_data.context3D.setProgram($shader.program);
         Scene_data.context3D.setVcMatrix4fv($shader, "vpMatrix3D", Scene_data.vpMatrix.m);

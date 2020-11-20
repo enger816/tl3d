@@ -40,9 +40,9 @@ export class Override2dEngine extends OverrideEngine {
     }
 
 
-    public static init($caves: HTMLCanvasElement): void {
+    public static init(): void {
 
-        OverrideEngine.init($caves)
+        OverrideEngine.init()
         Scene_data.focus3D.x = 0;
         Scene_data.focus3D.y = 0;
         Scene_data.focus3D.z = 0;

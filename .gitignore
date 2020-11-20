@@ -6,5 +6,10 @@
 /engineProject2.6/node_modules
 /engineProject2.6/dist
 /engineProject2.6/src/TL3dIndex.ts
-/engin24/.vscode
-/tl3d_v3.0/jsbag/node_modules
+
+/test2.6/node_modules
+/test2.6/bin/js
+/test2.6/release/web
+/test2.6/relase/native/android_studio/app/build
+/test2.6/relase/native/android_studio/app/src/main/assets/cache
+/test2.6/relase/native/wkwebview/resource/cache

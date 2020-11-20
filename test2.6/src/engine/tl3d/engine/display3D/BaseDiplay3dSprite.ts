@@ -88,10 +88,14 @@ export class BaseDiplay3dSprite extends Display3D {
         this.upToGpu();
     }
     private loadTexture(): void {
-        var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D(128, 128, false);
-        $ctx.fillStyle = "rgb(255,255,255)";
-        $ctx.fillRect(0, 0, 128, 128);
-        this._uvTextureRes = TextureManager.getInstance().getCanvasTexture($ctx)
+        // var $ctx: CanvasRenderingContext2D = UIManager.getInstance().getContext2D(128, 128, false);
+        // $ctx.fillStyle = "rgb(255,255,255)";
+        // $ctx.fillRect(0, 0, 128, 128);
+        // this._uvTextureRes = TextureManager.getInstance().getCanvasTexture($ctx)
+         //todo  jpg
+         var tres=new TextureRes();
+         tres.texture=Scene_data.tex128;
+         this._uvTextureRes=tres;
     }
     public _uvTextureRes: TextureRes
 

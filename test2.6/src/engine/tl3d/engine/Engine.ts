@@ -14,7 +14,7 @@ import { FpsMc } from "./FpsStage";
 
 export class Engine {
 
-    public static init($caves: HTMLCanvasElement): void {
+    public static init(): void {
 
    /*      var isIpad = /ipad/i.test(navigator.userAgent);
         var isIphone = /iPhone/i.test(navigator.userAgent);
@@ -59,6 +59,13 @@ export class Engine {
         TimeUtil.init();
 
         PathManager.init(); */
+        //todo
+        TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/brdf_ltu.jpg", ($texture: TextureRes) => {
+            Scene_data.tex128 = $texture.texture;
+        }, 1);
+        TextureManager.getInstance().getTexture(Scene_data.fileRoot + "base/shadow.png", ($texture: TextureRes) => {
+            Scene_data.tex32 = $texture.texture;
+        });
     }
 
    /*  public static resReady(): void {
@@ -103,7 +110,7 @@ export class Engine {
 
     public static needVertical: Boolean = true;
     public static needInputTxt: boolean = false;//在输入文本时，将不再可调整大小
-    public static resetSize(a: number = 0, b: number = 0): void {
+    public static resetSize(): void {
 
  /*        if (Engine.needInputTxt) {
             return;
