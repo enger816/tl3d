@@ -123,6 +123,7 @@ export class Display3DSprite extends Display3D {
         if (!this.lightMapTextureRes) {
             //alert("无光照贴图") 
             //console.log("无光照贴图------------------------------------");
+            return null;
         }
         return this.lightMapTextureRes.texture;
     }
@@ -506,6 +507,8 @@ export class Display3DSprite extends Display3D {
         for (var i: number = 0; i < texVec.length; i++) {
             if (texVec[i].type == TexItem.LIGHTMAP) {
                 //_context.setTextureAt(texVec[i].id, lightMapTexture);
+                //todo
+                if(this.lightMapTexture)
                 Scene_data.context3D.setRenderTexture($material.shader, texVec[i].name, this.lightMapTexture, texVec[i].id);
             }
             else if (texVec[i].type == TexItem.LTUMAP && Scene_data.pubLut) {

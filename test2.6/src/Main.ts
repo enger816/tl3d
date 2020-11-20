@@ -1,7 +1,6 @@
 import { CameraView } from "./camera/CameraView";
 import { VertexElementFormat } from "./engine/l3d/VertexElementFormat";
 import { LayaScene2dInit } from "./engine/pansrc/layapan/overridebase/LayaScene2dInit";
-import { mainpan3d } from "./engine/tl3dinit/mainpan3d";
 import GameConfig from "./GameConfig";
 import { GameView2d } from "./scene/GameView2d";
 import { GameView3d } from "./scene/GameView3d";
@@ -15,7 +14,6 @@ class Main {
 		let cv = Laya.init(GameConfig.width, GameConfig.height, Laya["WebGL"]);
 		Laya["Physics"] && Laya["Physics"].enable();
 		Laya["DebugPanel"] && Laya["DebugPanel"].enable();
-		mainpan3d.canvas = cv;
 		Laya.stage.scaleMode = GameConfig.scaleMode;
 		Laya.stage.screenMode = GameConfig.screenMode;
 		Laya.stage.alignV = GameConfig.alignV;

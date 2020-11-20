@@ -33,8 +33,8 @@ export class OverrideEngine extends Engine {
     public static resetSize(width?: number, height?: number): void {
         Scene_data.stageWidth = width;
         Scene_data.stageHeight = height;
-        Scene_data.canvas3D.width = Scene_data.stageWidth;
-        Scene_data.canvas3D.height = Scene_data.stageHeight;
+        // Scene_data.canvas3D.width = Scene_data.stageWidth;
+        // Scene_data.canvas3D.height = Scene_data.stageHeight;
 
         Scene_data.context3D.resetSize(Scene_data.stageWidth, Scene_data.stageHeight);
 
@@ -42,7 +42,7 @@ export class OverrideEngine extends Engine {
     }
 
 
-    public static init($caves: HTMLCanvasElement): void {
+    public static init(): void {
 
         var isIpad = /ipad/i.test(navigator.userAgent);
         var isIphone = /iPhone/i.test(navigator.userAgent);
@@ -58,9 +58,9 @@ export class OverrideEngine extends Engine {
         }
 
         Scene_data.vpMatrix = new Matrix3D;
-        Scene_data.canvas3D = $caves;
+        // Scene_data.canvas3D = $caves;
         Scene_data.context3D = new Context3D();
-        Scene_data.context3D.init($caves);
+        Scene_data.context3D.init();
 
         Scene_data.cam3D = new Camera3D;
         Scene_data.focus3D = new Object3D;
