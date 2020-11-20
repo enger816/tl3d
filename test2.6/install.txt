@@ -1,9 +1,27 @@
-1.install node
-npm
-node
-npm i layaair2-cmd -g
+1.npm install
 
-//build project
+2.安装layanative2
+https://ldc2.layabox.com/doc/?nav=zh-ts-6-3-0
+npm install -g layanative2
+
+2.替换工具
+替换tool目录到node_modules
+复制pngquant,pngquant.exe到node_modules/pngquant-bin/vendor
+
+3.node安装异常处理
+node安装模块异常
+修改hosts解决
+vi  etc/hosts
+199.232.28.133  raw.githubusercontent.com
+
+环境变量
+vi  ~/.bash_profile 
+exit wq
+source ./.bash_profile
+
+4.可选layaair2-cmd方式编译项目
+npm i layaair2-cmd -g
+build project
 layaair2-cmd compile
-//publis web
+publis web
 layaair2-cmd publish -c web

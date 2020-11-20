@@ -7,7 +7,7 @@ import { IndexBuffer3D } from "../../../l3d/IndexBuffer3D";
         // public renderContext: WebGLRenderingContext;
         public renderContext: WebGLRenderingContext;
         public _contextSetTest: ContextSetTest;
-        public init($caves: HTMLCanvasElement): void {
+        public init(): void {
             //this.renderContext = $caves.getContext("experimental-webgl");
             // this.renderContext =  Laya.LayaGL.instance;
            

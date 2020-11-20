@@ -1,0 +1,63 @@
+{
+  "_from": "gulp-asset-manifest@^0.0.6",
+  "_id": "gulp-asset-manifest@0.0.6",
+  "_inBundle": false,
+  "_integrity": "sha1-lojZguY3rlFlnmAZ/MnMYXPB7k4=",
+  "_location": "/gulp-asset-manifest",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "gulp-asset-manifest@^0.0.6",
+    "name": "gulp-asset-manifest",
+    "escapedName": "gulp-asset-manifest",
+    "rawSpec": "^0.0.6",
+    "saveSpec": null,
+    "fetchSpec": "^0.0.6"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/gulp-asset-manifest/-/gulp-asset-manifest-0.0.6.tgz",
+  "_shasum": "9688d982e637ae51659e6019fcc9cc6173c1ee4e",
+  "_spec": "gulp-asset-manifest@^0.0.6",
+  "_where": "E:\\tl3d\\test2.6",
+  "author": {
+    "name": "Vanja Cosic",
+    "email": "vanja@cosic.dk",
+    "url": "http://cosic.dk"
+  },
+  "bugs": {
+    "url": "https://github.com/vanjacosic/gulp-asset-manifest/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "gulp-util": "~3.0.1",
+    "map-stream": "~0.0.5"
+  },
+  "deprecated": false,
+  "description": "gulp plugin for adding generated assets to a manifest file",
+  "files": [
+    "index.js"
+  ],
+  "homepage": "https://github.com/vanjacosic/gulp-asset-manifest",
+  "keywords": [
+    "gulp",
+    "gulpplugin",
+    "assets",
+    "manifest",
+    "django",
+    "filename",
+    "files"
+  ],
+  "license": "MIT",
+  "name": "gulp-asset-manifest",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vanjacosic/gulp-asset-manifest.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.0.6"
+}
