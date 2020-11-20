@@ -14,7 +14,7 @@ export class LayaOverride2dEngine extends OverrideEngine {
     public static initConfig(): void {
 
         // Engine.update = () => { this.update() }  //更换update
-        Engine.init = ($caves: HTMLCanvasElement) => { Override2dEngine.init($caves) } //更换引擎初始化
+        Engine.init = () => { Override2dEngine.init() } //更换引擎初始化
         Engine.resetSize = (width?: number, height?: number) => { Override2dEngine.resetSize(width, height) } //更尺寸变化
 
         Engine.resetViewMatrx3D = () => { Override2dEngine.resetViewMatrx3D() }

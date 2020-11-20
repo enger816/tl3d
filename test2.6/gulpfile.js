@@ -1,6 +1,6 @@
 var gulp = require('gulp');
 var clean = require('gulp-clean');
-var image = require("gulp-image");
+// var image = require("gulp-image");
 var assetManifest = require('gulp-asset-manifest');
 var rev = require('gulp-rev'); 
 //build typescript
@@ -75,9 +75,9 @@ gulp.task('genmanifest', function () {
 
 //gulp入口
 gulp.task('default', gulp.series(
-    // gulp.parallel('clean'),
+    gulp.parallel('clean'),
     gulp.parallel('build'),
     gulp.parallel('copyFile'),
     // gulp.parallel('compressimage'),
-    // gulp.parallel('genmanifest')
+    gulp.parallel('genmanifest')
 ));
