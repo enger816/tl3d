@@ -1,2 +1,4 @@
 1.npm config get prefix
-2.将输出的npm路径添加到环境变量里面
+2.锟斤拷锟斤拷锟斤拷锟絥pm路锟斤拷锟斤拷锟接碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
+
+test pull request
